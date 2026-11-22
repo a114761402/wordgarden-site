@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Word Garden Daily</title>
+<meta name="description" content="Word Garden Daily: learn words anywhere — nod or shake with AirPods, ask AI, widgets, Apple Watch, Mac and CarPlay.">
+<meta name="theme-color" content="#F7F5EF">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="Word Garden Daily">
+<meta property="og:description" content="随时随地，把词背进生活 · Learn words anywhere, any time">
+<meta property="og:image" content="https://wordgarden.me/assets/en/poster.jpg">
+<meta property="og:url" content="https://wordgarden.me/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://wordgarden.me/">
+<meta name="apple-itunes-app" content="app-id=6821732641">
+<link rel="icon" type="image/png" href="assets/zh/icon.png">
+<link rel="apple-touch-icon" href="assets/zh/icon.png">
+<style>
+  /* One calm column: hero film first, then feature rows that alternate copy and real screens, closing on the download. */
+  :root {
+    --bg: #F7F5EF; --card: #FFFFFF; --ink: #1E3123; --muted: #5B6B5E; --line: #E5E2D8;
+    --green: #2E7D4F; --green-soft: #E3F0E7; --blue: #4A80B5;
+    --nav-bg: rgba(247, 245, 239, .84); --seg-bg: #ECE9E0; --seg-on: #FFFFFF; --chip-bg: #FFFFFF; --key-bg: #FFFFFF; --key-edge: #C9D2DA;
+    --store-bg: #111111; --store-fg: #FFFFFF; --solid-bg: #1E3123; --solid-fg: #FFFFFF;
+    --sky-a: #E9F1F9; --sky-b: #DCE9F6; --sky-c: #F4F7FA; --leaf-a: #EEF5EF; --leaf-b: #E0EEE3; --leaf-c: #F6F8F4;
+    --paper-a: #FBFAF6; --paper-b: #F0EDE3; --steel-a: #E7ECF2; --steel-b: #D6DEE8;
+    --shadow-c: rgba(30, 49, 35, .28);
+    --radius: 28px; --shadow: 0 24px 60px -24px var(--shadow-c), 0 2px 8px rgba(30, 49, 35, .06);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #121814; --card: #1B231E; --ink: #E6EDE7; --muted: #A1B0A5; --line: #2B352F;
+    --green: #74C493; --green-soft: #22382A; --blue: #6FA4D6;
+    --nav-bg: rgba(18, 24, 20, .84); --seg-bg: #232C26; --seg-on: #34403A; --chip-bg: #1B231E; --key-bg: #2A332D; --key-edge: #0C100D;
+    --store-bg: #F1F4F1; --store-fg: #111111; --solid-bg: #E6EDE7; --solid-fg: #121814;
+    --sky-a: #1C2836; --sky-b: #16212D; --sky-c: #1E2731; --leaf-a: #1C2A21; --leaf-b: #17231B; --leaf-c: #1E2822;
+    --paper-a: #202620; --paper-b: #1A1F1A; --steel-a: #1D232B; --steel-b: #171C23; --shadow-c: rgba(0, 0, 0, .6); color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #121814; --card: #1B231E; --ink: #E6EDE7; --muted: #A1B0A5; --line: #2B352F;
+    --green: #74C493; --green-soft: #22382A; --blue: #6FA4D6;
+    --nav-bg: rgba(18, 24, 20, .84); --seg-bg: #232C26; --seg-on: #34403A; --chip-bg: #1B231E; --key-bg: #2A332D; --key-edge: #0C100D;
+    --store-bg: #F1F4F1; --store-fg: #111111; --solid-bg: #E6EDE7; --solid-fg: #121814;
+    --sky-a: #1C2836; --sky-b: #16212D; --sky-c: #1E2731; --leaf-a: #1C2A21; --leaf-b: #17231B; --leaf-c: #1E2822;
+    --paper-a: #202620; --paper-b: #1A1F1A; --steel-a: #1D232B; --steel-b: #171C23; --shadow-c: rgba(0, 0, 0, .6); color-scheme: dark }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 11; background: var(--nav-bg); }
+  img, video { display: block; max-width: 100%; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .wrap { width: 100%; max-width: 1152px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; font-size: 17px; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .spacer { flex: 1; }
+  .lang { display: flex; background: var(--seg-bg); border-radius: 999px; padding: 3px; }
+  .lang button { border: 0; background: none; font: inherit; font-size: 13px; padding: 5px 11px; border-radius: 999px; color: var(--muted); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--seg-on); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; }
+
+  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease; white-space: nowrap; }
+  .btn:active { transform: scale(.98); }
+  .btn-store { background: var(--store-bg); color: var(--store-fg); padding: 12px 22px 12px 18px; font-size: 16px; box-shadow: 0 10px 24px -10px var(--shadow-c); }
+  .btn-store svg { width: 22px; height: 22px; }
+  .btn-store small { display: block; font-size: 11px; font-weight: 500; opacity: .75; line-height: 1.1; }
+  .btn-store span { display: block; line-height: 1.15; }
+  .btn-sm { padding: 8px 14px; font-size: 14px; background: var(--solid-bg); color: var(--solid-fg); }
+  .btn-ghost { padding: 12px 20px; font-size: 16px; color: var(--ink); background: var(--chip-bg); box-shadow: inset 0 0 0 1px var(--line); }
+
+  .hero { text-align: center; padding-block: 72px 40px; }
+  .hero .icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 24px; box-shadow: var(--shadow); }
+  h1 { font-size: clamp(36px, 6.4vw, 68px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 800; text-wrap: balance; }
+  .lead { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 640px; margin: 0 auto 30px; }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .meta { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .film { margin: 48px auto 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--sky-b); aspect-ratio: 16 / 9; max-width: 100%; }
+  .film video { width: 100%; height: 100%; object-fit: cover; }
+
+  section { padding-block: 64px; }
+  .eyebrow { font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
+  h2 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.15; letter-spacing: -.015em; margin: 0 0 14px; font-weight: 800; text-wrap: balance; }
+  .sec-head { text-align: center; max-width: 712px; margin: 0 auto 44px; }
+  .sec-head.tight { margin-bottom: 30px; }
+  .sec-head p { color: var(--muted); font-size: 18px; margin: 0; }
+  .feature { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; padding-block: 40px; }
+  .feature > * { min-width: 0; }
+  .feature.flip .copy { order: 2; }
+  .copy p { font-size: 18px; color: var(--muted); margin: 0 0 16px; max-width: 34em; }
+  .copy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .copy li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; }
+  .copy li::before { content: "✓"; flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 800; display: grid; place-items: center; }
+  .copy .note { font-size: 13px; opacity: .85; margin-top: 16px; }
+  .stage { position: relative; border-radius: var(--radius); background: linear-gradient(160deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%); min-height: 420px; display: grid; place-items: center; overflow: hidden; padding: 32px; }
+  .stage.green { background: linear-gradient(160deg, var(--leaf-a) 0%, var(--leaf-b) 60%, var(--leaf-c) 100%); }
+  .stage.cream { background: linear-gradient(160deg, var(--paper-a) 0%, var(--paper-b) 100%); }
+
+  .nod { display: flex; align-items: center; gap: 8px; }
+  .nod .head { width: 46%; max-width: 230px; }
+  .nod .card { width: 54%; max-width: 280px; filter: drop-shadow(0 18px 30px var(--shadow-c)); }
+  .pair { position: relative; width: 100%; }
+  .pair .mac { width: 88%; border-radius: 14px; box-shadow: var(--shadow); }
+  .pair .phone { position: absolute; right: 0; bottom: -6%; width: 30%; filter: drop-shadow(0 20px 30px var(--shadow-c)); }
+  .keys { position: absolute; top: 28px; left: 28px; display: flex; gap: 8px; }
+  .key { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 11px; background: var(--key-bg); box-shadow: 0 2px 0 var(--key-edge), 0 4px 12px rgba(0,0,0,.08); display: grid; place-items: center; font-weight: 700; font-size: 17px; }
+  .quick { width: 82%; margin-top: 40px; filter: drop-shadow(0 26px 40px var(--shadow-c)); border-radius: 22px; }
+  [hidden] { display: none !important; }
+  .shot { width: 100%; max-width: 340px; filter: drop-shadow(0 22px 36px var(--shadow-c)); }
+  .shot.wide { max-width: 100%; border-radius: 14px; }
+  .widgets { display: grid; grid-template-columns: auto auto; gap: 18px; align-items: start; }
+  .widgets img { filter: drop-shadow(0 16px 28px var(--shadow-c)); }
+  .widgets .medium { grid-column: 1 / -1; width: 100%; max-width: 440px; }
+  .widgets .small { width: 100%; max-width: 205px; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-block: 40px; }
+  .tile { background: var(--card); border-radius: var(--radius); padding: 32px; box-shadow: 0 1px 0 var(--line); display: flex; flex-direction: column; min-width: 0; }
+  .tile h3 { font-size: 24px; margin: 0 0 8px; letter-spacing: -.01em; }
+  .tile p { color: var(--muted); margin: 0 0 24px; }
+  .tile .art { margin-top: auto; border-radius: 20px; display: grid; place-items: center; padding: 24px; min-height: 300px; background: linear-gradient(160deg, var(--sky-a), var(--sky-b)); }
+  .tile .art.steel { background: linear-gradient(160deg, var(--steel-a), var(--steel-b)); }
+  .tile .art img { max-height: 280px; width: auto; }
+  .tile .art.steel img { max-height: 220px; }
+
+  .screens { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 28px max(16px, env(safe-area-inset-left, 0px)); justify-content: center; scrollbar-width: none; }
+  .screens::-webkit-scrollbar { display: none; }
+  .screens figure { margin: 0; flex: none; width: 230px; scroll-snap-align: center; text-align: center; }
+  .screens img { width: 100%; filter: drop-shadow(0 18px 30px var(--shadow-c)); }
+  .screens figcaption { margin-top: 14px; font-size: 15px; font-weight: 600; }
+
+  .chip { padding: 9px 18px; border-radius: 999px; background: var(--chip-bg); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 16px; }
+  .chip.on { background: var(--blue); color: var(--store-fg); box-shadow: none; }
+  .langs { display: grid; gap: 22px; justify-items: center; }
+  .langs .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .langs .lab { font-weight: 700; color: var(--muted); }
+  .devices { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; color: var(--muted); font-weight: 600; }
+
+  .final { text-align: center; padding-block: 88px 96px; }
+  .final .icon { width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 22px; box-shadow: var(--shadow); }
+  footer { border-top: 1px solid var(--line); padding-block: 28px 40px; font-size: 13px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  footer a { color: inherit; text-underline-offset: 2px; }
+
+  .reveal { transition: transform .7s ease; }
+  .reveal.lift { transform: translateY(14px); }
+  @media (prefers-reduced-motion: reduce) { .reveal, .reveal.lift { transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* iPad: keep two columns, just tighter */
+  @media (min-width: 701px) and (max-width: 1100px) {
+    .feature { gap: 36px; padding-block: 32px; }
+    .stage { min-height: 340px; padding: 24px; }
+    .copy p { font-size: 17px; }
+    .duo { gap: 20px; }
+    .tile { padding: 26px; }
+    .tile .art { min-height: 240px; padding: 20px; }
+    .tile .art img { max-height: 230px; }
+    .tile .art.steel img { max-height: 180px; }
+  }
+  @media (max-width: 700px) {
+    .feature, .feature.flip { grid-template-columns: 1fr; gap: 24px; padding-block: 28px; }
+    .feature.flip .copy { order: 0; }
+    .duo { grid-template-columns: 1fr; gap: 16px; }
+    .stage { min-height: 0; padding: 24px; }
+  }
+  @media (max-width: 860px) {
+    .screens { justify-content: flex-start; justify-content: safe center; }
+    .screens figure { width: 180px; }
+    section { padding-block: 44px; }
+    .hero { padding-block: 48px 24px; }
+    .film { margin-top: 36px; border-radius: 18px; }
+  }
+  @media (max-width: 520px) {
+    .brand span { display: none; }
+    nav .wrap { gap: 8px; }
+    .lang button { padding: 5px 9px; }
+    .btn-sm { padding: 8px 12px; }
+    .keys { top: 18px; left: 18px; }
+    .key { min-width: 38px; height: 38px; font-size: 15px; }
+    .quick { width: 100%; margin-top: 56px; }
+    .tile { padding: 22px; }
+    .tile .art { min-height: 0; padding: 18px; }
+    .tile .art img { max-height: 240px; }
+    .hero { padding-top: 36px; }
+    .hero .icon { width: 76px; height: 76px; border-radius: 18px; margin-bottom: 18px; }
+    h1 { font-size: 32px; }
+    .lead { font-size: 16px; margin-bottom: 24px; }
+    .btn-store, .btn-ghost { padding-block: 11px; font-size: 15px; }
+    .film { margin-top: 28px; border-radius: 14px; }
+    .copy p { font-size: 16px; }
+    .copy li { font-size: 15px; }
+    .pair .phone { width: 36%; }
+    .sec-head { margin-bottom: 28px; }
+    .sec-head p { font-size: 16px; }
+    .screens { gap: 16px; }
+    .screens figure { width: 180px; }
+    .chip { padding: 7px 14px; font-size: 15px; }
+    .langs .row { gap: 10px; }
+    .devices { gap: 6px 18px; font-size: 15px; margin-top: 28px; }
+    .final { padding-block: 56px 64px; }
+    .final .icon { width: 68px; height: 68px; border-radius: 16px; }
+  }
+  /* finger-sized targets on touch screens */
+  @media (pointer: coarse) { .lang button { min-height: 32px; } .btn-sm { min-height: 36px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/zh/icon.png" alt=""><span>Word Garden Daily</span></a>
+    <div class="spacer"></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中文</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="nl">NL</button>
+      <button type="button" data-lang="es">ES</button>
+    </div>
+    <a class="btn btn-sm store-link" href="https://apps.apple.com/app/id6821732641"><span data-i="navGet">免费下载</span></a>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <img class="icon" src="assets/zh/icon.png" alt="Word Garden Daily">
+  <h1 data-i="h1">随时随地，<br>把词背进生活</h1>
+  <p class="lead" data-i="lead">戴着耳机点头、摇头就能背词；有不会的问 AI；桌面组件、手表和 CarPlay 上随手就答。每天一点点，花园就长大。</p>
+  <div class="cta">
+    <a class="btn btn-store store-link" href="https://apps.apple.com/app/id6821732641">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.73c.02 2.4 2.1 3.2 2.13 3.2-.02.06-.33 1.14-1.1 2.26-.66.97-1.35 1.94-2.43 1.96-1.06.02-1.4-.63-2.62-.63-1.21 0-1.6.61-2.6.65-1.05.04-1.84-1.05-2.51-2.02-1.37-1.97-2.41-5.58-1.01-8.01.7-1.21 1.94-1.97 3.28-1.99 1.03-.02 2 .69 2.62.69.63 0 1.81-.86 3.05-.73.52.02 1.98.21 2.92 1.58-.08.05-1.74 1.02-1.73 3.04ZM14.36 5.1c.55-.67.93-1.6.82-2.53-.8.03-1.77.53-2.34 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.81-.45 2.36-1.12Z"/></svg>
+      <span><small data-i="storeSmall">在 App Store</small><span data-i="storeBig">免费下载</span></span>
+    </a>
+    <a class="btn btn-ghost" href="#film" data-i="watch">▶ 看介绍片</a>
+  </div>
+  <p class="meta" data-i="meta">iPhone · iPad · Mac · Apple Watch · CarPlay</p>
+  <div class="film reveal" id="film">
+    <video controls playsinline preload="metadata" poster="assets/zh/poster.jpg" data-src="film-1080.mp4" data-poster="poster.jpg">
+      <source src="assets/zh/film-1080.mp4" type="video/mp4">
+    </video>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="copy">
+        <p class="eyebrow" data-i="f1e">AirPods</p>
+        <h2 data-i="f1t">点头记得，<br>摇头想不起</h2>
+        <p data-i="f1p">跑步、通勤、做家务时，手机放在兜里。听到单词，点头就是“记得”，摇头就是“想不起”，下一个词自动播放。</p>
+        <ul>
+          <li data-i="f1a">锁屏、耳机柄也能作答</li>
+          <li data-i="f1b">灵敏度可调：低、中、高或自定义</li>
+        </ul>
+        <p class="note" data-i="f1n">点头作答需要支持头部追踪的 AirPods。</p>
+      </div>
+      <div class="stage">
+        <div class="nod"><img class="head" data-src="nod.png" src="assets/zh/nod.png" alt=""><img class="card" data-src="card-got.png" src="assets/zh/card-got.png" alt=""></div>
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="copy">
+        <p class="eyebrow" data-i="f2e">AI</p>
+        <h2 data-i="f2t">不会的，<br>直接问 AI</h2>
+        <p data-i="f2p">“心情低落英文怎么说？”词典里没有的说法、要改的句子、App 怎么用，都可以问。问过的词一键存进生词本。</p>
+        <ul>
+          <li data-i="f2a">iPhone、iPad、Mac 上都能问，记录自动同步</li>
+          <li data-i="f2b">问词、改句子、翻译，自动分好类</li>
+        </ul>
+        <p class="note" data-i="f2n">云端 AI 需要联网，你输入的内容会发送给 Anthropic 处理。</p>
+      </div>
+      <div class="stage cream">
+        <div class="pair"><img class="mac" data-src="ai-mac.jpg" src="assets/zh/ai-mac.jpg" alt=""><img class="phone" data-src="ai-phone.png" src="assets/zh/ai-phone.png" alt=""></div>
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="copy">
+        <p class="eyebrow" data-i="f3e">Mac</p>
+        <h2 data-i="f3t">任何 App 里，<br>一键查词</h2>
+        <p data-i="f3p">看文章、写邮件时遇到生词，按 ⇧ ⌥ 空格，边打边出结果，拼错也能找到。查过的词自动进生词本。</p>
+        <ul>
+          <li data-i="f3a">不用切换窗口，回车看完整解释</li>
+          <li data-i="f3b">离线词典，查词不用等</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div>
+        <img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="">
+      </div>
+    </div>
+
+    <div class="feature flip reveal">
+      <div class="copy">
+        <p class="eyebrow" data-i="f4e">Widgets</p>
+        <h2 data-i="f4t">不打开 App，<br>也能背</h2>
+        <p data-i="f4p">把组件放在 iPhone 主屏或 Mac 桌面上，直接点 ✓ 记得、✗ 想不起，进度圆环随时看还剩几个。</p>
+        <ul>
+          <li data-i="f4a">小、中、大三种尺寸</li>
+          <li data-i="f4b">连续天数和今日进度一眼看到</li>
+        </ul>
+      </div>
+      <div class="stage green">
+        <div class="widgets">
+          <img class="medium" data-src="widget-medium.png" src="assets/zh/widget-medium.png" alt="">
+          <img class="small" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="feature reveal" data-needs hidden>
+      <div class="copy">
+        <p class="eyebrow" data-i="f5e">Safari</p>
+        <h2 data-i="f5t">网页上的生词，<br>选中就懂</h2>
+        <p data-i="f5p">在 iPhone、iPad、Mac 的 Safari 里选中一个词，马上看到离线释义，还能听发音。点 ☆ 就收进生词本，下次背到它。</p>
+        <ul>
+          <li data-i="f5a">不用离开网页，也不用联网</li>
+          <li data-i="f5b">短语查不到时，逐词给出意思</li>
+        </ul>
+      </div>
+      <div class="stage cream"><img class="shot" data-src="safari.png" alt=""></div>
+    </div>
+
+    <div class="feature flip reveal" data-needs hidden>
+      <div class="copy">
+        <p class="eyebrow" data-i="f6e">悬浮窗</p>
+        <h2 data-i="f6t">刷别的 App，<br>单词还在眼前</h2>
+        <p data-i="f6p">听着背时切到别的 App，当前单词会变成一个小悬浮窗，浮在屏幕上。看一眼就知道在背哪个词，播放、暂停、上一个、下一个都能直接点。</p>
+        <ul>
+          <li data-i="f6a">离开 App 时自动浮出来</li>
+          <li data-i="f6b">iPhone 和 iPad 都支持</li>
+        </ul>
+      </div>
+      <div class="stage"><img class="shot" data-src="float.png" alt=""></div>
+    </div>
+
+    <div class="duo reveal">
+      <div class="tile">
+        <h3 data-i="wt">Apple Watch</h3>
+        <p data-i="wp">手机放兜里，在手表上背。离线可用，连着 AirPods 也能听着背。</p>
+        <div class="art"><img data-src="watch.png" src="assets/zh/watch.png" alt=""></div>
+      </div>
+      <div class="tile">
+        <h3 data-i="ct">CarPlay</h3>
+        <p data-i="cp">开车时只听不看：在「正在播放」点 ✓ 记得、✗ 想不起；方向盘下一首是下一个词，上一首是再听一遍。</p>
+        <div class="art steel"><img data-src="carplay.png" src="assets/zh/carplay.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="reveal">
+    <div class="wrap sec-head">
+      <p class="eyebrow" data-i="se">Screens</p>
+      <h2 data-i="st">简单，好上手</h2>
+      <p data-i="sp">打开就背，一组十个词，背完看花园长大。</p>
+    </div>
+    <div class="screens">
+      <figure><img data-src="home.png" src="assets/zh/home.png" alt="" loading="lazy"><figcaption data-i="s1">今天的花园</figcaption></figure>
+      <figure><img data-src="study.png" src="assets/zh/study.png" alt="" loading="lazy"><figcaption data-i="s2">单词卡片</figcaption></figure>
+      <figure><img data-src="listen.png" src="assets/zh/listen.png" alt="" loading="lazy"><figcaption data-i="s3">听着背</figcaption></figure>
+      <figure><img data-src="ai-phone.png" src="assets/zh/ai-phone.png" alt="" loading="lazy"><figcaption data-i="s4">问 AI</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap sec-head tight">
+      <p class="eyebrow" data-i="le">Languages</p>
+      <h2 data-i="lt">多种语言互学</h2>
+      <p data-i="lp">离线词典各语言合计 40 多万词条，没网也能查。</p>
+    </div>
+    <div class="wrap langs">
+      <div class="row"><span class="lab" data-i="ll">可以学</span><span class="chip on">English</span><span class="chip on">中文</span><span class="chip on">Nederlands</span><span class="chip on">Svenska</span></div>
+      <div class="row"><span class="lab" data-i="lu">界面</span><span class="chip">中文</span><span class="chip">English</span><span class="chip">Nederlands</span><span class="chip">Español</span></div>
+      <div class="devices"><span>iPhone</span><span>iPad</span><span>Mac</span><span>Apple Watch</span><span>CarPlay</span></div>
+    </div>
+  </section>
+
+  <section class="final reveal">
+    <div class="wrap">
+      <img class="icon" src="assets/zh/icon.png" alt="">
+      <h2 data-i="ft">每天一点点，花园就长大</h2>
+      <p class="lead" data-i="fp">免费下载，现在就开始。</p>
+      <div class="cta">
+        <a class="btn btn-store store-link" href="https://apps.apple.com/app/id6821732641">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.73c.02 2.4 2.1 3.2 2.13 3.2-.02.06-.33 1.14-1.1 2.26-.66.97-1.35 1.94-2.43 1.96-1.06.02-1.4-.63-2.62-.63-1.21 0-1.6.61-2.6.65-1.05.04-1.84-1.05-2.51-2.02-1.37-1.97-2.41-5.58-1.01-8.01.7-1.21 1.94-1.97 3.28-1.99 1.03-.02 2 .69 2.62.69.63 0 1.81-.86 3.05-.73.52.02 1.98.21 2.92 1.58-.08.05-1.74 1.02-1.73 3.04ZM14.36 5.1c.55-.67.93-1.6.82-2.53-.8.03-1.77.53-2.34 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.81-.45 2.36-1.12Z"/></svg>
+          <span><small data-i="storeSmall">在 App Store</small><span data-i="storeBig">免费下载</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-i="foot1">部分功能随即将发布的 1.2 版本推出。CarPlay 和桌面画面为示意图。请在安全的情况下使用。</p>
+    <p data-i="foot2">Apple、iPhone、iPad、Mac、Apple Watch、AirPods、CarPlay 是 Apple Inc. 的商标。</p>
+    <p><a href="privacy.html" data-i="privacy">隐私政策</a> · © 2026 Word Garden</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var T = {
+    en: {
+      navGet: 'Get the app', h1: 'Learn words<br>anywhere, any time',
+      lead: 'Nod or shake with your AirPods to answer. Ask AI when you get stuck. Study from widgets, your Apple Watch and CarPlay. A little every day, and your garden grows.',
+      storeSmall: 'Download on the', storeBig: 'App Store', watch: '▶ Watch the film', privacy: 'Privacy Policy', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
+      f1e: 'AirPods', f1t: 'Nod: got it.<br>Shake: not yet.', f1p: 'Running, commuting, cooking — your phone stays in your pocket. Hear a word, nod if you know it, shake if you don’t, and the next one plays.',
+      f1a: 'Or answer from the Lock Screen or your AirPods stem', f1b: 'Sensitivity: low, medium, high or custom', f1n: 'Head-gesture answers need AirPods with head tracking.',
+      f2e: 'AI', f2t: 'Stuck?<br>Just ask AI', f2p: '“How do I say ‘I’m feeling down’?” Ask about phrases the dictionary doesn’t have, fix a sentence, or ask how the app works. Save what you learn to your word list in one tap.',
+      f2a: 'On iPhone, iPad and Mac, with your history in sync', f2b: 'Words, sentence fixes and translations, sorted for you', f2n: 'Cloud AI needs internet and sends what you enter to Anthropic.',
+      f3e: 'Mac', f3t: 'Look up any word<br>from any app', f3p: 'Reading or writing and see a new word? Press ⇧ ⌥ Space. Results appear as you type, typos and all, and every word you open goes to your notebook.',
+      key: 'Space', f3a: 'No window switching; Return opens the full entry', f3b: 'Offline dictionary, instant results',
+      f4e: 'Widgets', f4t: 'Learn without<br>opening the app', f4p: 'Put a widget on your iPhone Home Screen or Mac desktop. Tap ✓ or ✗ right there, and the ring shows how many words are left.',
+      f4a: 'Small, medium and large', f4b: 'Your streak and today’s progress at a glance',
+      f5e: 'Safari', f5t: 'Select a word,<br>right in Safari', f5p: 'Reading the web in Safari on iPhone, iPad or Mac? Select a word to see its meaning from the offline dictionary and hear it spoken. Tap ☆ to add it to your word list for later.',
+      f5a: 'No leaving the page, no internet needed', f5b: 'Phrases the dictionary lacks get each word’s meaning',
+      f6e: 'Floating window', f6t: 'Switch apps,<br>keep your word in view', f6p: 'During Listen & learn, switch to another app and the current word floats in a small window on top. One glance tells you which word is playing, and play, pause, back and next are right there.',
+      f6a: 'Floats out by itself when you leave the app', f6b: 'On iPhone and iPad',
+      wt: 'Apple Watch', wp: 'Phone in your pocket? Study on your wrist — offline, or listen and learn with AirPods.',
+      ct: 'CarPlay', cp: 'Eyes on the road, just listen: tap ✓ Got it or ✗ Not yet on Now Playing. Next plays the next word, previous plays it again.',
+      se: 'Screens', st: 'Simple from day one', sp: 'Open it and start: ten words a group, then watch your garden grow.',
+      s1: 'Today’s garden', s2: 'Word cards', s3: 'Listen & learn', s4: 'Ask AI',
+      le: 'Languages', lt: 'Learn in many languages', ll: 'Learn', lu: 'App language', lp: '400,000+ dictionary entries across all languages, all offline.',
+      ft: 'A little every day,<br>and your garden grows', fp: 'Free to download. Start today.',
+      foot1: 'Some features arrive with the upcoming version 1.2. CarPlay and desktop scenes are illustrations. Use only when it is safe to do so.',
+      foot2: 'Apple, iPhone, iPad, Mac, Apple Watch, AirPods and CarPlay are trademarks of Apple Inc.'
+    },
+    // Dutch interface, learning Chinese (zh-nl)
+    nl: {
+      navGet: 'Download', h1: 'Leer woorden<br>waar en wanneer je wilt',
+      lead: 'Knik of schud je hoofd met je AirPods om te antwoorden. Vraag het AI als je vastzit. Leer via widgets, je Apple Watch en CarPlay. Elke dag een beetje, en je tuin groeit.',
+      storeSmall: 'Download in de', storeBig: 'App Store', watch: '▶ Bekijk de film', privacy: 'Privacyverklaring', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
+      f1e: 'AirPods', f1t: 'Knikken: ken ik.<br>Schudden: nog niet.', f1p: 'Hardlopen, reizen, koken — je telefoon blijft in je zak. Hoor een woord, knik als je het kent, schud als je het niet weet, en het volgende woord begint.',
+      f1a: 'Of antwoord via het toegangsscherm of het steeltje van je AirPods', f1b: 'Gevoeligheid: laag, gemiddeld, hoog of aangepast', f1n: 'Antwoorden met je hoofd vereist AirPods met hoofdtracking.',
+      f2e: 'AI', f2t: 'Vast?<br>Vraag het AI', f2p: '“Hoe zeg je ‘ik voel me down’ in het Chinees?” Vraag naar uitdrukkingen die niet in het woordenboek staan, laat een zin verbeteren of vraag hoe de app werkt. Bewaar wat je leert met één tik in je woordenlijst.',
+      f2a: 'Op iPhone, iPad en Mac, met je geschiedenis gesynchroniseerd', f2b: 'Woorden, zinsverbeteringen en vertalingen, netjes gesorteerd', f2n: 'Cloud-AI heeft internet nodig en stuurt wat je invoert naar Anthropic.',
+      f3e: 'Mac', f3t: 'Zoek elk woord op<br>vanuit elke app', f3p: 'Kom je tijdens het lezen of schrijven een nieuw woord tegen? Druk op ⇧ ⌥ Spatie. Resultaten verschijnen terwijl je typt, ook met typfouten, en elk woord dat je opent komt in je woordenlijst.',
+      key: 'Spatie', f3a: 'Geen ander venster nodig; Return toont de volledige uitleg', f3b: 'Offline woordenboek, direct resultaat',
+      f4e: 'Widgets', f4t: 'Leren zonder<br>de app te openen', f4p: 'Zet een widget op je iPhone-beginscherm of Mac-bureaublad. Tik daar meteen op ✓ of ✗, en de ring laat zien hoeveel woorden er nog over zijn.',
+      f4a: 'Klein, middelgroot en groot', f4b: 'Je reeks en de voortgang van vandaag in één oogopslag',
+      f5e: 'Safari', f5t: 'Selecteer een woord,<br>gewoon in Safari', f5p: 'Lees je op internet in Safari op iPhone, iPad of Mac? Selecteer een woord en zie meteen de betekenis uit het offline woordenboek, en hoor hoe je het uitspreekt. Tik op ☆ om het in je woordenschrift te bewaren.',
+      f5a: 'Je blijft op de pagina, ook zonder internet', f5b: 'Staat een uitdrukking niet in het woordenboek, dan krijg je de betekenis per woord',
+      f6e: 'Zwevend venster', f6t: 'Wissel van app,<br>je woord blijft in beeld', f6p: 'Ga tijdens Luisterend leren naar een andere app, en het huidige woord zweeft in een klein venster bovenop. Eén blik en je weet welk woord er speelt; afspelen, pauzeren, terug en volgende zitten er gewoon in.',
+      f6a: 'Komt vanzelf tevoorschijn als je de app verlaat', f6b: 'Op iPhone en iPad',
+      wt: 'Apple Watch', wp: 'Telefoon in je zak? Leer op je pols — offline, of luister en leer met AirPods.',
+      ct: 'CarPlay', cp: 'Ogen op de weg, alleen luisteren: tik op ✓ Ken ik of ✗ Nog niet bij Speelt nu. Volgende speelt het volgende woord, vorige herhaalt het.',
+      se: 'Schermen', st: 'Eenvoudig vanaf dag één', sp: 'Open de app en begin: tien woorden per groep, en zie je tuin groeien.',
+      s1: 'De tuin van vandaag', s2: 'Woordkaarten', s3: 'Luisteren en leren', s4: 'Vraag het AI',
+      le: 'Talen', lt: 'Leer in meerdere talen', ll: 'Leren', lu: 'Apptaal', lp: 'Ruim 400.000 woordenboekitems in alle talen samen, ook offline.',
+      ft: 'Elke dag een beetje,<br>en je tuin groeit', fp: 'Gratis te downloaden. Begin vandaag.',
+      foot1: 'Sommige functies komen met de aankomende versie 1.2. CarPlay- en bureaubladbeelden zijn illustraties. Gebruik de app alleen als het veilig is.',
+      foot2: 'Apple, iPhone, iPad, Mac, Apple Watch, AirPods en CarPlay zijn handelsmerken van Apple Inc.'
+    },
+    // Spanish interface, learning Dutch (nl-es)
+    es: {
+      navGet: 'Descargar', h1: 'Aprende palabras<br>donde y cuando quieras',
+      lead: 'Asiente o niega con la cabeza con tus AirPods para responder. Pregunta a la IA cuando te atasques. Estudia desde widgets, tu Apple Watch y CarPlay. Un poco cada día, y tu jardín crece.',
+      storeSmall: 'Descárgalo en el', storeBig: 'App Store', watch: '▶ Ver el vídeo', privacy: 'Política de privacidad', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
+      f1e: 'AirPods', f1t: 'Asientes: lo sé.<br>Niegas: aún no.', f1p: 'Corriendo, de camino al trabajo, cocinando: el móvil se queda en el bolsillo. Oyes una palabra, asientes si la sabes, niegas si no, y suena la siguiente.',
+      f1a: 'O responde desde la pantalla bloqueada o el tallo de tus AirPods', f1b: 'Sensibilidad: baja, media, alta o personalizada', f1n: 'Responder con la cabeza requiere AirPods con seguimiento de la cabeza.',
+      f2e: 'IA', f2t: '¿Te atascas?<br>Pregunta a la IA', f2p: '“¿Cómo se dice ‘estoy de bajón’ en neerlandés?” Pregunta por expresiones que no están en el diccionario, corrige una frase o pregunta cómo funciona la app. Guarda lo que aprendes en tu lista de palabras con un toque.',
+      f2a: 'En iPhone, iPad y Mac, con tu historial sincronizado', f2b: 'Palabras, correcciones y traducciones, ordenadas para ti', f2n: 'La IA en la nube necesita internet y envía lo que escribes a Anthropic.',
+      f3e: 'Mac', f3t: 'Busca cualquier palabra<br>desde cualquier app', f3p: '¿Lees o escribes y aparece una palabra nueva? Pulsa ⇧ ⌥ Espacio. Los resultados aparecen mientras escribes, incluso con erratas, y cada palabra que abres va a tu lista.',
+      key: 'Espacio', f3a: 'Sin cambiar de ventana; Intro abre la entrada completa', f3b: 'Diccionario sin conexión, resultados al instante',
+      f4e: 'Widgets', f4t: 'Aprende sin<br>abrir la app', f4p: 'Pon un widget en la pantalla de inicio del iPhone o en el escritorio del Mac. Toca ✓ o ✗ ahí mismo, y el anillo te muestra cuántas palabras quedan.',
+      f4a: 'Pequeño, mediano y grande', f4b: 'Tu racha y el progreso de hoy de un vistazo',
+      f5e: 'Safari', f5t: 'Selecciona una palabra<br>en Safari', f5p: '¿Lees en Safari en el iPhone, iPad o Mac? Selecciona una palabra para ver su significado en el diccionario sin conexión y oír cómo se pronuncia. Toca ☆ para guardarla en tu lista de palabras.',
+      f5a: 'Sin salir de la página y sin conexión', f5b: 'Si una expresión no está en el diccionario, verás el significado de cada palabra',
+      f6e: 'Ventana flotante', f6t: 'Cambia de app,<br>tu palabra sigue a la vista', f6p: 'Mientras escuchas y aprendes, cambia a otra app y la palabra actual flota en una pequeña ventana encima. De un vistazo sabes qué palabra suena, y tienes reproducir, pausa, anterior y siguiente a mano.',
+      f6a: 'Aparece sola al salir de la app', f6b: 'En iPhone y iPad',
+      wt: 'Apple Watch', wp: '¿El móvil en el bolsillo? Estudia en la muñeca, sin conexión, o escucha y aprende con AirPods.',
+      ct: 'CarPlay', cp: 'Ojos en la carretera, solo escuchar: toca ✓ Lo sé o ✗ Todavía no en Reproduciendo. Siguiente pasa a otra palabra y anterior la repite.',
+      se: 'Pantallas', st: 'Fácil desde el primer día', sp: 'Ábrela y empieza: diez palabras por grupo, y mira cómo crece tu jardín.',
+      s1: 'El jardín de hoy', s2: 'Tarjetas', s3: 'Escucha y aprende', s4: 'Pregunta a la IA',
+      le: 'Idiomas', lt: 'Aprende en varios idiomas', ll: 'Aprender', lu: 'Idioma de la app', lp: 'Más de 400.000 entradas de diccionario entre todos los idiomas, también sin conexión.',
+      ft: 'Un poco cada día,<br>y tu jardín crece', fp: 'Descarga gratuita. Empieza hoy.',
+      foot1: 'Algunas funciones llegarán con la próxima versión 1.2. Las escenas de CarPlay y del escritorio son ilustraciones. Úsala solo cuando sea seguro.',
+      foot2: 'Apple, iPhone, iPad, Mac, Apple Watch, AirPods y CarPlay son marcas comerciales de Apple Inc.'
+    }
+  };
+  var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
+  var zh = {};
+  document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
+  T.zh = zh;
+  var video = document.querySelector('video');
+  function setLang(lang) {
+    var t = T[lang];
+    document.documentElement.lang = HTML_LANG[lang];
+    document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
+    // nl/es shots may not exist yet: any file that fails to load falls back to the English one
+    var own = lang === 'zh' || lang === 'en';
+    document.querySelectorAll('img[data-src]').forEach(function (el) {
+      el.onerror = own ? null : function () { el.onerror = null; el.src = 'assets/en/' + el.dataset.src; };
+      el.src = 'assets/' + lang + '/' + el.dataset.src;
+    });
+    var src = 'assets/' + lang + '/film-1080.mp4', source = video.querySelector('source');
+    if (video.currentSrc.indexOf(src) < 0) {
+      video.pause();
+      source.onerror = own ? null : function () { source.onerror = null; source.src = 'assets/en/film-1080.mp4'; video.load(); };
+      source.src = src; video.load();
+      video.poster = 'assets/' + lang + '/poster.jpg';
+      if (!own) { var p = new Image(); p.onerror = function () { if (video.poster.indexOf('/' + lang + '/') >= 0) video.poster = 'assets/en/poster.jpg'; }; p.src = video.poster; }
+    }
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    try { localStorage.setItem('wg.site.lang', lang); } catch (e) {}
+  }
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem('wg.site.lang'); } catch (e) {}
+  var nav = (navigator.language || '').slice(0, 2).toLowerCase();
+  var initial = T[q] ? q : T[saved] ? saved : T[nav] ? nav : 'en';
+  setLang(initial);
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+
+  // sections whose pictures aren't made yet stay hidden until one loads
+  document.querySelectorAll('[data-needs] img').forEach(function (img) {
+    var sec = img.closest('[data-needs]');
+    img.addEventListener('load', function () { sec.hidden = false; if (img.naturalWidth > img.naturalHeight) img.classList.add('wide'); });
+  });
+  document.querySelectorAll('img[data-src]').forEach(function (img) { if (img.complete && img.naturalWidth && img.closest('[data-needs]')) img.closest('[data-needs]').hidden = false; });
+
+  // the App Store page in the visitor's own region
+  document.querySelectorAll('.store-link').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('lift'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('lift'); io.observe(el); } });
+  }
+})();
+</script>
+</body>
+</html>
