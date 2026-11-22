@@ -1,0 +1,42 @@
+Word Garden lookup dictionaries (public/dictionaries), rebuilt on 2026-10-11 by
+public/dictionaries/build-dictionaries.py. No ECDICT text and no FreeDict data is included.
+
+English to Chinese (en-zh): about 30,000 words: the exam wordbook words and other common words. The Chinese meanings and the
+British IPA were written by AI (Claude, Anthropic, 2026-10) and checked for format and spot-checked;
+they may contain mistakes. Which words are in which exam, and the frequency order, follow public word lists and are not
+official lists. These entries are shared under
+Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0), https://creativecommons.org/licenses/by-sa/4.0/
+
+Dutch to English (nl-en): English Wiktionary contributors, https://en.wiktionary.org/ , extracted by
+kaikki.org (Tatu Ylonen, Wiktextract; file kaikki.org-dictionary-Dutch.jsonl.gz). CC BY-SA 4.0.
+Modifications: Dutch lemmas and the inflected forms that point to them; archaic, dated, rare and
+dialectal senses omitted; at most two parts of speech and four senses per lemma; organised into 128
+lazy public shards. These derived files are shared under the same CC BY-SA 4.0 license.
+
+The shard files are public, so anyone can download and reuse them under those licenses.
+Personal wordbooks are not public.
+
+Swedish (sv-en dictionary and lib-sven-freq-*.json wordbooks): English Wiktionary
+contributors, https://en.wiktionary.org/ , via kaikki.org (Tatu Ylonen, Wiktextract),
+https://kaikki.org/dictionary/Swedish/ , extracted 2026-10-03.
+Source file: kaikki-swedish.jsonl.gz; its SHA-256 is pinned in scripts/build-library.py
+and recorded in the dictionary manifest. Licensed CC BY-SA 4.0:
+https://creativecommons.org/licenses/by-sa/4.0/
+Swedish wordbook order: FrequencyWords by Hermit Dave,
+https://github.com/hermitdave/FrequencyWords/blob/master/content/2018/sv/sv_50k.txt
+(OpenSubtitles 2018, content CC BY-SA 4.0); SHA-256 pinned in scripts/build-library.py.
+Modifications: selected and shortened senses; obsolete/rare/dialectal senses excluded;
+frequency of inflected forms credited to lemmas (är -> vara); en/ett and IPA retained;
+lookup lemmas plus inflected forms distributed in 128 shards and a headword-only spelling index.
+The adapted Swedish data is shared under the same CC BY-SA 4.0 license.
+Chinese meanings for lib-svzh-freq-*.json, when supplied, are translated and organised
+with automated tools from the English senses: 借助自动化工具翻译整理，可能有疏漏。
+They are also shared under CC BY-SA 4.0. No Chinese frequency books are generated
+without a complete supplied Chinese translation. Starter glosses and examples are original;
+Swedish starter IPA was checked against this Wiktionary extract (CC BY-SA 4.0).
+
+Dutch to Spanish (nl-es), Dutch to Chinese (nl-zh) and Swedish to Chinese (sv-zh), 2026-11-19: the
+meanings of the nl-en and sv-en entries above, translated into Spanish or Chinese by AI (Claude, Anthropic,
+2026-11) for learners with a Spanish or Chinese interface, and checked for format and spot-checked; they may
+contain mistakes. The 10,000 words of the matching library wordbooks and the inflected forms are not repeated
+in them. Derived from English Wiktionary (see above) and shared under the same CC BY-SA 4.0 license.

@@ -1,0 +1,39 @@
+{
+  "format": 1,
+  "shards": 128,
+  "modified": "2026-10-11",
+  "sources": {
+    "en-zh": {
+      "name": "Word Garden AI-written entries",
+      "license": "CC-BY-SA-4.0",
+      "source": "Written by Claude (Anthropic), 2026-10; headwords from public exam syllabi",
+      "licenseFile": "/dictionaries/NOTICE.txt",
+      "entries": 30738,
+      "bytes": 2114214,
+      "gzipBytes": 1031788,
+      "maxShardBytes": 18799
+    },
+    "nl-en": {
+      "name": "English Wiktionary via kaikki.org",
+      "license": "CC-BY-SA-4.0",
+      "source": "https://en.wiktionary.org/ ; https://kaikki.org/dictionary/Dutch/",
+      "licenseFile": "/dictionaries/NOTICE.txt",
+      "entries": 106561,
+      "bytes": 9745858,
+      "gzipBytes": 3414010,
+      "maxShardBytes": 81965,
+      "sha256": "f8b81184c67b1f1047f00cee23aafdda1cfdf2ed15f46dad0a8453396368fdbd"
+    },
+    "sv-en": {
+      "name": "English Wiktionary via kaikki.org",
+      "license": "CC-BY-SA-4.0",
+      "source": "https://en.wiktionary.org/ ; https://kaikki.org/dictionary/Swedish/",
+      "licenseFile": "/dictionaries/NOTICE.txt",
+      "entries": 280282,
+      "bytes": 25507696,
+      "gzipBytes": 7787053,
+      "maxShardBytes": 211838,
+      "sha256": "59862cff1543adde569c4c37ccd1c244408913cb1ed486451a44760774245395"
+    }
+  }
+}
