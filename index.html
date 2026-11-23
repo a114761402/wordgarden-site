@@ -9,10 +9,10 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:title" content="Word Garden Daily">
 <meta property="og:description" content="随时随地，把词背进生活 · Learn words anywhere, any time">
-<meta property="og:image" content="https://wordgarden.me/assets/en/poster.jpg">
-<meta property="og:url" content="https://wordgarden.me/">
+<meta property="og:image" content="https://wordgarden.nl/assets/en/poster.jpg">
+<meta property="og:url" content="https://wordgarden.nl/">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://wordgarden.me/">
+<link rel="canonical" href="https://wordgarden.nl/">
 <meta name="apple-itunes-app" content="app-id=6821732641">
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
@@ -505,7 +505,7 @@
   var q = new URLSearchParams(location.search).get('lang'), saved = null;
   try { saved = localStorage.getItem('wg.site.lang'); } catch (e) {}
   var nav = (navigator.language || '').slice(0, 2).toLowerCase();
-  var initial = T[q] ? q : T[saved] ? saved : T[nav] ? nav : 'en';
+  var initial = T[q] ? q : T[saved] ? saved : T[nav] ? nav : 'nl';
   setLang(initial);
   document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
 

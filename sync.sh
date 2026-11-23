@@ -17,5 +17,5 @@ rm -rf "$here/dictionaries" "$here/library"
 grep -oE 'href="/(dictionaries|library)/[^"#]+"' "$here/open-data.html" | sed 's/^href="\///;s/"$//' | sort -u | while read -r f; do
   mkdir -p "$here/$(dirname "$f")"; cp "$web/public/$f" "$here/$f"
 done
-echo wordgarden.me > "$here/CNAME"
+echo wordgarden.nl > "$here/CNAME"
 touch "$here/.nojekyll"
