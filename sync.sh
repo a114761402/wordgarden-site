@@ -6,6 +6,7 @@ site="$here/../launch-2026-11-18/site"
 web="$here/../.."
 cp "$site/index.html" "$here/index.html"
 cp "$web/public/privacy.html" "$here/privacy.html"
+cp "$web/public/support.html" "$here/support.html"
 for l in zh en nl es; do
   mkdir -p "$here/assets/$l"
   rsync -a --delete --exclude 'film.mp4' --exclude '.*' "$site/assets/$l/" "$here/assets/$l/"
