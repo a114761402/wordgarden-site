@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v24.css?v=0b8df4211c88">
+<link rel="stylesheet" href="responsive-v25.css?v=77332859ecc5">
 </head>
 <body>
 <nav>
@@ -51,7 +51,10 @@
   </div>
   <p class="free-note" data-i="allFree">所有功能免费</p>
   </div>
-  <figure class="ecosystem-photo"><picture><source media="(min-width:701px)" srcset="assets/zh/ecosystem-four-desktop-l10n-v1-1200.webp 1200w, assets/zh/ecosystem-four-desktop-l10n-v1-2400.webp 2400w" sizes="(max-width:1120px) calc(100vw - 48px), 1072px" width="2400" height="1100"><img src="assets/zh/ecosystem-four-mobile-l10n-v1-1600.webp" srcset="assets/zh/ecosystem-four-mobile-l10n-v1-800.webp 800w, assets/zh/ecosystem-four-mobile-l10n-v1-1600.webp 1600w" sizes="(max-width:480px) calc(100vw - 40px), 440px" width="1600" height="1800" data-alt-i="heroAlt" alt="Word Garden 在 iPhone 18 Pro、iPhone Duo 和 MacBook 上的界面，旁边有 AirPods。设备和界面示意。"></picture><figcaption data-i="heroArtNote">设备示意。iPhone Duo 内屏为界面示意。</figcaption></figure>
+  <figure class="ecosystem-photo"><picture>
+      <source media="(min-width:701px)" srcset="assets/ecosystem-eight-keyboard-desktop-1200.webp 1200w, assets/ecosystem-eight-keyboard-desktop-2400.webp 2400w" sizes="(max-width:1120px) calc(100vw - 48px), 1072px" width="2400" height="1100">
+    <img src="assets/ecosystem-eight-keyboard-mobile-1600.webp" srcset="assets/ecosystem-eight-keyboard-mobile-800.webp 800w, assets/ecosystem-eight-keyboard-mobile-1600.webp 1600w" sizes="(max-width:700px) calc(100vw - 40px), 534px" width="1600" height="1800" data-alt-i="heroAlt" alt="Word Garden：MacBook、iPad、iPhone 18 Pro、iPhone Duo、Apple Watch、Apple Watch Ultra、AirPods 和 CarPlay。设备与界面为宣传示意。">
+    </picture><figcaption data-i="heroArtNote">设备示意。iPhone Duo 内屏为界面示意。</figcaption></figure>
 </header>
 
 <main>
@@ -315,9 +318,9 @@
   Object.assign(T.en,{"gestureNod": "Nod if you know it.", "gestureShake": "Shake your head if you don’t.", "gestureNodAlt": "Nod if you know it.", "gestureShakeAlt": "Shake your head if you don’t."});
   Object.assign(T.nl,{"gestureNod": "Knik als je het weet.", "gestureShake": "Schud je hoofd als je het nog niet weet.", "gestureNodAlt": "Knik als je het weet.", "gestureShakeAlt": "Schud je hoofd als je het nog niet weet."});
   Object.assign(T.es,{"gestureNod": "Asiente si ya lo sabes.", "gestureShake": "Niega con la cabeza si aún no lo sabes.", "gestureNodAlt": "Asiente si ya lo sabes.", "gestureShakeAlt": "Niega con la cabeza si aún no lo sabes."});
-  Object.assign(T.en,{"heroAlt": "Word Garden on iPhone 18 Pro, iPhone Duo and MacBook, with AirPods beside them. Device and interface illustrations.", "heroArtNote": "Device illustration. The iPhone Duo interface is illustrative."});
-  Object.assign(T.nl,{"heroAlt": "Word Garden op iPhone 18 Pro, iPhone Duo en MacBook, met AirPods ernaast. Illustraties van apparaten en interface.", "heroArtNote": "Apparaatillustratie. De interface op de iPhone Duo is ter illustratie."});
-  Object.assign(T.es,{"heroAlt": "Word Garden en iPhone 18 Pro, iPhone Duo y MacBook, junto a unos AirPods. Ilustraciones de los dispositivos y de la interfaz.", "heroArtNote": "Ilustración de los dispositivos. La interfaz del iPhone Duo es ilustrativa."});
+  Object.assign(T.en,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods and CarPlay. Device and interface illustrations.", "heroArtNote": "Device illustration. The iPhone Duo interface is illustrative."});
+  Object.assign(T.nl,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods en CarPlay. Illustraties van apparaten en interface.", "heroArtNote": "Apparaatillustratie. De interface op de iPhone Duo is ter illustratie."});
+  Object.assign(T.es,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods y CarPlay. Ilustraciones de los dispositivos y de la interfaz.", "heroArtNote": "Ilustración de los dispositivos. La interfaz del iPhone Duo es ilustrativa."});
   Object.assign(T.en,{"runningStillAlt": "In the snowy promotional film, a treadmill runner, both running shoes and an iPad appear beside a green “I know it” study card.", "runningStillCaption": "From the promotional film. Listen to words while running and nod to answer."});
   Object.assign(T.nl,{"runningStillAlt": "In de promotiefilm loopt iemand op een loopband in een sneeuwlandschap. Beide hardloopschoenen, de iPad en de groene woordkaart zijn zichtbaar.", "runningStillCaption": "Beeld uit de promotiefilm. Luister tijdens het hardlopen naar woorden en knik om te antwoorden."});
   Object.assign(T.es,{"runningStillAlt": "En el vídeo promocional, una persona corre en una cinta frente a un paisaje nevado. Se ven las zapatillas, el iPad y la tarjeta verde «Lo sé».", "runningStillCaption": "Imagen del vídeo promocional. Escucha palabras mientras corres y asiente para responder."});
@@ -330,29 +333,9 @@
   availableImages = availableImages.concat(["running-film-still-v2-1920.webp"]).concat(["iphone-feature-study-thin-v1.png", "iphone-feature-listen-thin-v1.png", "iphone-feature-lookup-thin-v1.png", "iphone-feature-ai-thin-v1.png"]).concat(["chatgpt-words-desktop-v3.webp", "chatgpt-words-mobile-v3.webp"]).concat(["notes-widget-preview-v19.webp"]).concat(["mac-widget-trio-desktop-v2.webp", "mac-widget-trio-mobile-v2.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
   var imageGeneration = 0;
-function updateLocalizedHero(lang, generation) {
-  var picture = document.querySelector('.ecosystem-photo picture');
-  var img = picture.querySelector('img');
-  var desktop = picture.querySelector('source');
-  function useSources(locale) {
-    var prefix = 'assets/' + locale + '/ecosystem-four-';
-    desktop.srcset = prefix + 'desktop-l10n-v1-1200.webp 1200w, ' + prefix + 'desktop-l10n-v1-2400.webp 2400w';
-    img.srcset = prefix + 'mobile-l10n-v1-800.webp 800w, ' + prefix + 'mobile-l10n-v1-1600.webp 1600w';
-    img.src = prefix + 'mobile-l10n-v1-1600.webp';
-  }
-  img.onerror = lang === 'en' ? null : function () {
-    var prefix = new URL('assets/' + lang + '/', location.href).href;
-    if (generation !== imageGeneration || !img.currentSrc || img.currentSrc.indexOf(prefix) !== 0) return;
-    img.onerror = null;
-    useSources('en');
-  };
-  useSources(lang);
-}
-
   function setLang(lang) {
     var generation = ++imageGeneration;
     var t = T[lang];
-    updateLocalizedHero(lang, generation);
     document.documentElement.lang = HTML_LANG[lang];
     document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
     document.querySelectorAll('[data-alt-i]').forEach(function (el) { if (t[el.dataset.altI] != null) el.alt = t[el.dataset.altI]; });
