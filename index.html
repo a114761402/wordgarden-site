@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v13.css">
+<link rel="stylesheet" href="responsive-v14.css?v=29e649377d3e">
 </head>
 <body>
 <nav>
@@ -74,7 +74,7 @@
     <div class="sec-head features-intro">
       <h2 data-i="ecoIntro">让学习融入每一种日常</h2>
     </div>
-    <div class="feature reveal mac-overview" id="mac">
+    <div class="feature reveal mac-overview platform-wide" id="mac">
       <div class="copy">
         <p class="eyebrow" data-i="f3e">Mac</p>
         <h2 data-i="f3t">任何 App 里，<br>一键查词</h2>
@@ -85,9 +85,9 @@
           <li data-i="f3b">离线词典，查词不用等</li>
         </ul>
       </div>
-      <div class="stage">
-        <div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div>
-        <img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="">
+      <div class="mac-showcase">
+        <figure class="platform-shot"><img data-src="mac-home-detail-v14.webp" src="assets/zh/mac-home-detail-v14.webp" alt="Word Garden on Mac" loading="lazy" width="1600" height="1000" decoding="async"><figcaption data-i="macHomeLabel">Mac · 学习与查词</figcaption></figure>
+        <div class="lookup-detail"><div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div><img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="Mac quick lookup"><p data-i="macQuickLabel">Mac · 一键查词</p></div>
       </div>
     </div>
 
@@ -100,7 +100,7 @@
       <div class="stage"><img class="watch-shot" data-src="watch.png" src="assets/zh/watch.png" alt="Apple Watch"></div>
     </div>
 
-    <div class="feature reveal">
+    <div class="feature reveal" id="airpods">
       <div class="copy">
         <p class="eyebrow" data-i="f1e">AirPods</p>
         <h2 data-i="f1t">点头记得，<br>摇头想不起</h2>
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <div class="feature flip reveal">
+    <div class="feature reveal ai-overview platform-wide" id="ai">
       <div class="copy">
         <p class="eyebrow" data-i="f2e">AI</p>
         <h2 data-i="f2t">不会的，<br>直接问 AI</h2>
@@ -127,22 +127,15 @@
         </ul>
         <p class="note" data-i="f2n">云端 AI 需要联网，你输入的内容会发送给 Anthropic 处理。</p>
       </div>
-      <div class="stage ai-stage">
-        <div class="ai-demo" role="group" aria-label="Word Garden AI">
-          <p class="ai-demo-header">Word Garden <span>AI</span></p>
-          <p class="ai-demo-query" data-i="aiDemoQ">“心情不好”用英文怎么说？</p>
-          <div class="ai-demo-answer">
-            <p class="ai-demo-word" data-i="aiDemoA">I'm feeling down.</p>
-            <p class="ai-demo-detail" data-i="aiDemoDetail">我心情不好。</p>
-          </div>
-          <p class="ai-demo-caption" data-i="aiDemoCaption">对话示意</p>
-        </div>
-      </div>
+      <figure class="platform-shot mac-ai-showcase">
+        <picture><source media="(max-width:700px)" width="800" height="940" data-src="mac-ai-focus-v14.webp" srcset="assets/zh/mac-ai-focus-v14.webp"><img data-src="mac-ai-detail-v14.webp" src="assets/zh/mac-ai-detail-v14.webp" alt="Mac AI: navigation, history and conversation" loading="lazy" width="1800" height="1080" decoding="async"></picture>
+        <figcaption data-i="macAIlabel">Mac · AI 对话与历史记录 · 界面示意</figcaption>
+      </figure>
     </div>
 
 
 
-    <div class="feature flip reveal">
+    <div class="feature reveal platform-wide" id="widgets">
       <div class="copy">
         <p class="eyebrow" data-i="f4e">Widgets</p>
         <h2 data-i="f4t">不打开 App，<br>也能背</h2>
@@ -152,15 +145,13 @@
           <li data-i="f4b">连续天数和今日进度一眼看到</li>
         </ul>
       </div>
-      <div class="stage green">
-        <div class="widgets">
-          <img class="medium" data-src="widget-medium.png" src="assets/zh/widget-medium.png" alt="">
-          <img class="small" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="">
-        </div>
+      <div class="stage widget-platforms">
+        <figure><img data-src="mac-widget-detail-v14.webp" src="assets/zh/mac-widget-detail-v14.webp" alt="Mac desktop widget" loading="lazy" width="1600" height="1600" decoding="async"><figcaption data-i="macWidgetLabel">Mac 桌面组件</figcaption></figure>
+        <figure><img data-src="widget-medium.png" src="assets/zh/widget-medium.png" alt="iPhone and iPad widget"><img class="widget-compact" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="Small iPhone and iPad widget"><figcaption data-i="phoneWidgetLabel">iPhone 与 iPad 组件</figcaption></figure>
       </div>
     </div>
 
-    <div class="feature reveal">
+    <div class="feature reveal" id="safari">
       <div class="copy">
         <p class="eyebrow" data-i="f5e">Safari</p>
         <h2 data-i="f5t">网页上的生词，<br>选中就懂</h2>
@@ -170,7 +161,7 @@
           <li data-i="f5b">短语查不到时，逐词给出意思</li>
         </ul>
       </div>
-      <div class="stage cream"><img class="shot" data-src="safari.png" alt=""></div>
+      <figure class="stage tablet-safari"><span class="safari-window"><img data-src="ipad-safari-detail-v14.webp" src="assets/zh/ipad-safari-detail-v14.webp" alt="iPad Safari word lookup" loading="lazy" width="1600" height="2134" decoding="async"></span><figcaption>iPad · Safari</figcaption></figure>
     </div>
 
     <div class="feature text-feature reveal" id="floating-window">
@@ -198,11 +189,11 @@
       <h2 data-i="st">简单，好上手</h2>
       <p data-i="sp">打开就背，一组十个词，背完看花园长大。</p>
     </div>
-    <div class="screens">
-      <figure><img data-src="home.png" src="assets/zh/home.png" alt="" loading="lazy"><figcaption data-i="s1">今天的花园</figcaption></figure>
-      <figure><img data-src="study.png" src="assets/zh/study.png" alt="" loading="lazy"><figcaption data-i="s2">单词卡片</figcaption></figure>
-      <figure><img data-src="listen.png" src="assets/zh/listen.png" alt="" loading="lazy"><figcaption data-i="s3">听着背</figcaption></figure>
-      <figure><img data-src="ai-phone.png" src="assets/zh/ai-phone.png" alt="" loading="lazy"><figcaption data-i="s4">问 AI</figcaption></figure>
+    <div class="screens platform-gallery">
+      <figure class="gallery-mac"><img data-src="mac-study-detail-v14.webp" src="assets/zh/mac-study-detail-v14.webp" alt="Mac learning screen" loading="lazy" width="1600" height="1000" decoding="async"><figcaption data-i="galleryMac">Mac · 桌面学习</figcaption></figure>
+      <figure class="gallery-ipad"><img data-src="ipad-study-detail-v14.webp" src="assets/zh/ipad-study-detail-v14.webp" alt="iPad word card" loading="lazy" width="1600" height="2134" decoding="async"><figcaption data-i="galleryIpad">iPad · 大屏词卡</figcaption></figure>
+      <figure class="gallery-phone"><img data-src="study.png" src="assets/zh/study.png" alt="iPhone word card" loading="lazy"><figcaption data-i="galleryPhone">iPhone · 随手背词</figcaption></figure>
+      <figure class="gallery-watch"><img data-src="watch.png" src="assets/zh/watch.png" alt="Apple Watch word card" loading="lazy"><figcaption data-i="galleryWatch">Apple Watch · 手腕上学习</figcaption></figure>
     </div>
   </section>
 
@@ -350,16 +341,19 @@
   Object.assign(T.en,{"macOverview": "Learn and look up words on your Mac, or answer directly from a desktop widget.", "watchTitle": "Learn right on your wrist"});
   Object.assign(T.nl,{"macOverview": "Leer en zoek woorden op je Mac, of antwoord direct via een bureaubladwidget.", "watchTitle": "Leren, gewoon op je pols"});
   Object.assign(T.es,{"macOverview": "Aprende y busca palabras en el Mac, o responde desde un widget del escritorio.", "watchTitle": "Aprende desde tu muñeca"});
-  Object.assign(T.en,{"allFree": "All features are free"});
-  Object.assign(T.nl,{"allFree": "Alle functies zijn gratis"});
-  Object.assign(T.es,{"allFree": "Todas las funciones son gratis"});
+  Object.assign(T.en,{"allFree": "All features are free", "macHomeLabel": "Mac · Learn and look up words", "macQuickLabel": "Mac · Quick lookup", "macAIlabel": "Mac · AI conversations and history · Interface illustration", "macWidgetLabel": "Mac desktop widget", "phoneWidgetLabel": "iPhone and iPad widgets", "galleryMac": "Mac · Learn at your desk", "galleryIpad": "iPad · A bigger word card", "galleryPhone": "iPhone · Learn on the go", "galleryWatch": "Apple Watch · Learn on your wrist"});
+  Object.assign(T.nl,{"allFree": "Alle functies zijn gratis", "macHomeLabel": "Mac · Leren en woorden opzoeken", "macQuickLabel": "Mac · Snel opzoeken", "macAIlabel": "Mac · AI-gesprekken en geschiedenis · Interfacevoorbeeld", "macWidgetLabel": "Mac-bureaubladwidget", "phoneWidgetLabel": "Widgets voor iPhone en iPad", "galleryMac": "Mac · Leren aan je bureau", "galleryIpad": "iPad · Woordkaarten op groot scherm", "galleryPhone": "iPhone · Onderweg leren", "galleryWatch": "Apple Watch · Leren op je pols"});
+  Object.assign(T.es,{"allFree": "Todas las funciones son gratis", "macHomeLabel": "Mac · Aprende y consulta palabras", "macQuickLabel": "Mac · Consulta rápida", "macAIlabel": "Mac · Conversaciones e historial de IA · Interfaz ilustrativa", "macWidgetLabel": "Widget del escritorio del Mac", "phoneWidgetLabel": "Widgets para iPhone y iPad", "galleryMac": "Mac · Aprende en tu escritorio", "galleryIpad": "iPad · Tarjetas en pantalla grande", "galleryPhone": "iPhone · Aprende donde estés", "galleryWatch": "Apple Watch · Aprende en tu muñeca"});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
   T.zh = zh;
   var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster.jpg", "quick.png", "safari.png", "study.png", "watch.png", "widget-medium.png", "widget-small.png"];
+  availableImages = availableImages.concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
+  var imageGeneration = 0;
   function setLang(lang) {
+    var generation = ++imageGeneration;
     var t = T[lang];
     document.documentElement.lang = HTML_LANG[lang];
     document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
@@ -369,9 +363,17 @@
     var own = lang === 'zh' || lang === 'en';
     document.querySelectorAll('img[data-src]').forEach(function (el) {
       if (availableImages.indexOf(el.dataset.src) < 0) return;
-      el.onerror = own ? null : function () { el.onerror = null; el.src = 'assets/en/' + el.dataset.src; };
+      el.onerror = own ? null : function () {
+        var prefix = new URL('assets/' + lang + '/', location.href).href;
+        if (generation !== imageGeneration || !el.currentSrc || el.currentSrc.indexOf(prefix) !== 0) return;
+        el.onerror = null;
+        var picture = el.closest('picture');
+        if (picture) picture.querySelectorAll('source[data-src]').forEach(function (source) { source.srcset = 'assets/en/' + source.dataset.src; });
+        el.src = 'assets/en/' + el.dataset.src;
+      };
       el.src = 'assets/' + lang + '/' + el.dataset.src;
     });
+    document.querySelectorAll('picture source[data-src]').forEach(function (el) { el.srcset = 'assets/' + lang + '/' + el.dataset.src; });
     var src = 'assets/' + lang + '/film-1080.mp4?v=48438b339669', source = video.querySelector('source');
     if (video.currentSrc.indexOf(src) < 0) {
       video.pause();
