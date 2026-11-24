@@ -11,8 +11,8 @@ from urllib.parse import urlsplit
 import shutil, sys
 source, destination, public = map(Path, sys.argv[1:])
 runtime = ['index.html', 'privacy.html', 'support.html', 'open-data.html',
-           'light.css', 'responsive-v10.css', 'language.js', 'document-language.js',
-           'responsive-v10.js', 'assets/ecosystem-realistic-v9-800.webp',
+           'light.css', 'responsive-v11.css', 'language.js', 'document-language.js',
+           'assets/ecosystem-realistic-v9-800.webp',
            'assets/ecosystem-realistic-v9-1600.webp', 'assets/mobile-big-screens.webp']
 pairs = [(source / name, destination / name) for name in runtime]
 for language in ['zh', 'en', 'nl', 'es']:
