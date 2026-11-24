@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v17.css?v=e50df3132275">
+<link rel="stylesheet" href="responsive-v19.css?v=016efc234a7d">
 </head>
 <body>
 <nav>
@@ -145,10 +145,11 @@
           <li data-i="f4b">连续天数和今日进度一眼看到</li>
         </ul>
       </div>
-      <div class="stage widget-platforms">
+      <div class="stage widget-platforms notes-grid">
         <figure><img data-src="widget-mac-v16.webp" src="assets/zh/widget-mac-v16.webp" alt="Mac large learning widget" loading="lazy" width="960" height="960"><figcaption data-i="macWidgetLabel">Mac 桌面组件</figcaption></figure>
         <figure><img data-src="widget-iphone-v16.webp" src="assets/zh/widget-iphone-v16.webp" alt="iPhone medium learning widget" loading="lazy" width="960" height="449"><figcaption data-i="phoneWidgetLabel">iPhone 主屏组件</figcaption></figure>
         <figure><img data-src="widget-ipad-v16.webp" src="assets/zh/widget-ipad-v16.webp" alt="iPad supported large WidgetKit preview" loading="lazy" width="960" height="1008"><figcaption data-i="ipadWidgetLabel">iPad · 大号组件预览</figcaption></figure>
+        <figure class="notes-preview"><img data-src="notes-widget-preview-v19.webp" src="assets/zh/notes-widget-preview-v19.webp" alt="Offscreen preview of the Mac Notes widget" loading="lazy" width="720" height="340" decoding="async"><figcaption data-i="notesPreviewLabel">新功能预览 · Mac 笔记组件离屏渲染</figcaption></figure>
       </div>
     </div>
 
@@ -345,12 +346,15 @@
   Object.assign(T.en,{"allFree": "All features are free", "macHomeLabel": "Mac · Desktop widgets and a separate lookup window · Interface illustration<br>Click the lookup widget, then type in the separate window.", "macQuickLabel": "Mac · Quick lookup", "macAIlabel": "Mac · AI conversations and history · Interface illustration", "macWidgetLabel": "Mac desktop widget", "phoneWidgetLabel": "iPhone Home Screen widget", "galleryMac": "Mac · Learn at your desk", "galleryIpad": "iPad · A bigger word card", "galleryPhone": "iPhone · Learn on the go", "galleryWatch": "Apple Watch · Learn on your wrist", "ipadWidgetLabel": "iPad · Large widget preview"});
   Object.assign(T.nl,{"allFree": "Alle functies zijn gratis", "macHomeLabel": "Mac · Bureaubladwidgets en een apart zoekvenster · Interfacevoorbeeld<br>Klik op de zoekwidget en typ in het aparte venster.", "macQuickLabel": "Mac · Snel opzoeken", "macAIlabel": "Mac · AI-gesprekken en geschiedenis · Interfacevoorbeeld", "macWidgetLabel": "Mac-bureaubladwidget", "phoneWidgetLabel": "Widget op je iPhone-beginscherm", "galleryMac": "Mac · Leren aan je bureau", "galleryIpad": "iPad · Woordkaarten op groot scherm", "galleryPhone": "iPhone · Onderweg leren", "galleryWatch": "Apple Watch · Leren op je pols", "ipadWidgetLabel": "iPad · Voorbeeld van grote widget"});
   Object.assign(T.es,{"allFree": "Todas las funciones son gratis", "macHomeLabel": "Mac · Widgets de escritorio y ventana de consulta independiente · Interfaz ilustrativa<br>Haz clic en el widget de consulta y escribe en la ventana independiente.", "macQuickLabel": "Mac · Consulta rápida", "macAIlabel": "Mac · Conversaciones e historial de IA · Interfaz ilustrativa", "macWidgetLabel": "Widget del escritorio del Mac", "phoneWidgetLabel": "Widget del inicio del iPhone", "galleryMac": "Mac · Aprende en tu escritorio", "galleryIpad": "iPad · Tarjetas en pantalla grande", "galleryPhone": "iPhone · Aprende donde estés", "galleryWatch": "Apple Watch · Aprende en tu muñeca", "ipadWidgetLabel": "iPad · Vista previa del widget grande"});
+  Object.assign(T.en,{"notesPreviewLabel": "Feature preview · Offscreen render of the Mac Notes widget"});
+  Object.assign(T.nl,{"notesPreviewLabel": "Voorproefje · Offscreen-render van de Mac-widget voor notities"});
+  Object.assign(T.es,{"notesPreviewLabel": "Vista previa de la función · Renderizado fuera de pantalla del widget de notas para Mac"});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
   T.zh = zh;
   var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster.jpg", "quick.png", "safari.png", "study-thin-v15.png", "watch.png", "widget-medium.png", "widget-small.png"];
-  availableImages = availableImages.concat(["mac-desktop-v16.webp", "mac-desktop-focus-v16.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
+  availableImages = availableImages.concat(["notes-widget-preview-v19.webp"]).concat(["mac-desktop-v16.webp", "mac-desktop-focus-v16.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
   var imageGeneration = 0;
   function setLang(lang) {
