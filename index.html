@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v25.css?v=77332859ecc5">
+<link rel="stylesheet" href="responsive-v26.css?v=ab1e5d28eaf3">
 </head>
 <body>
 <nav>
@@ -54,7 +54,7 @@
   <figure class="ecosystem-photo"><picture>
       <source media="(min-width:701px)" srcset="assets/ecosystem-eight-keyboard-desktop-1200.webp 1200w, assets/ecosystem-eight-keyboard-desktop-2400.webp 2400w" sizes="(max-width:1120px) calc(100vw - 48px), 1072px" width="2400" height="1100">
     <img src="assets/ecosystem-eight-keyboard-mobile-1600.webp" srcset="assets/ecosystem-eight-keyboard-mobile-800.webp 800w, assets/ecosystem-eight-keyboard-mobile-1600.webp 1600w" sizes="(max-width:700px) calc(100vw - 40px), 534px" width="1600" height="1800" data-alt-i="heroAlt" alt="Word Garden：MacBook、iPad、iPhone 18 Pro、iPhone Duo、Apple Watch、Apple Watch Ultra、AirPods 和 CarPlay。设备与界面为宣传示意。">
-    </picture><figcaption data-i="heroArtNote">设备示意。iPhone Duo 内屏为界面示意。</figcaption></figure>
+    </picture><figcaption data-i="heroArtNote">设备示意。</figcaption></figure>
 </header>
 
 <main>
@@ -135,9 +135,18 @@
         </ul>
       </div>
 
-    </div><div class="chat-words-section"><figure class="platform-shot chat-words-concept" id="chat-words">
-        <picture><source media="(max-width:700px)" width="800" height="1200" data-src="chatgpt-words-mobile-v3.webp" srcset="assets/zh/chatgpt-words-mobile-v3.webp"><img data-src="chatgpt-words-desktop-v3.webp" data-alt-i="chatWordsAlt" src="assets/zh/chatgpt-words-desktop-v3.webp" alt="概念示意。在 ChatGPT 里练习对话，选出新词，再把词表行或已共享的 Google 表格链接粘贴到 Word Garden，在生词本里复习。" loading="lazy" width="1800" height="720" decoding="async"></picture>
-        <figcaption data-i="chatWordsCaption">先请 ChatGPT 把选中的词整理成词表行，再粘贴到 Word Garden。也可粘贴任何持链接者可查看的 Google 表格链接。</figcaption>
+    </div><div class="chat-words-section"><figure class="platform-shot chat-words-concept" id="chat-words" aria-labelledby="chat-words-title">
+        <div class="conversation-art">
+          <p class="eyebrow" data-i="chatConceptTag">对话示意</p>
+          <h2 id="chat-words-title" data-i="chatConceptTitle">自动识别对话中的重点单词和句子</h2>
+          <div class="conversation-cards">
+            <div class="conversation-card"><h3>ChatGPT</h3><p class="conversation-prompt" data-i="chatConceptPrompt">教我一句自然的英语。</p><p class="conversation-answer" data-i="chatConceptAnswer">I was <mark>reluctant</mark>, but <mark>I went there yesterday.</mark></p></div>
+            <div class="conversation-card"><h3><img src="assets/zh/icon.png" alt="" width="28" height="28"> Word Garden</h3>
+              <div class="conversation-pick"><p class="pick-label" data-i="chatWordLabel">重点单词</p><strong data-i="chatWord">reluctant</strong><p data-i="chatWordMeaning">不情愿的</p></div>
+              <div class="conversation-pick"><p class="pick-label" data-i="chatSentenceLabel">重点句子</p><strong data-i="chatSentence">I went there yesterday.</strong><p data-i="chatSentenceMeaning">我昨天去了那里。</p></div>
+            </div>
+          </div>
+        </div>
       </figure></div></div><section class="screen-section secondary-devices"><div class="wrap"><div class="sec-head"><h2 data-i="secondaryTitle">也能在这些设备上学</h2></div><div class="secondary-device-grid"><article class="secondary-device-group ipad-group"><div class="feature reveal" id="safari">
       <div class="copy">
         <p class="eyebrow" data-i="f5e">Safari</p>
@@ -309,28 +318,28 @@
   Object.assign(T.en,{"notesPreviewLabel": "Feature preview · Offscreen render of the Mac Notes widget"});
   Object.assign(T.nl,{"notesPreviewLabel": "Voorproefje · Offscreen-render van de Mac-widget voor notities"});
   Object.assign(T.es,{"notesPreviewLabel": "Vista previa de la función · Renderizado fuera de pantalla del widget de notas para Mac"});
-  Object.assign(T.en,{"chatWordsCaption": "Ask ChatGPT to put your selected words into vocabulary rows, then paste them into Word Garden. You can also paste a Google Sheets link that anyone with the link can view.", "chatWordsAlt": "Concept illustration. Choose words from a ChatGPT conversation, paste the vocabulary rows or a shared Google Sheets link into Word Garden, and review the words in your notebook."});
-  Object.assign(T.nl,{"chatWordsCaption": "Vraag ChatGPT om met je gekozen woorden een woordenlijst te maken. Plak de regels in Word Garden. Je kunt ook een Google Sheets-link plakken die iedereen met de link kan bekijken.", "chatWordsAlt": "Conceptillustratie. Kies woorden uit een gesprek in ChatGPT, plak de regels uit de woordenlijst of een gedeelde Google Sheets-link in Word Garden en oefen de woorden in je woordenschrift."});
-  Object.assign(T.es,{"chatWordsCaption": "Pide a ChatGPT que organice las palabras elegidas en filas y pégalas en Word Garden. También puedes pegar un enlace de Google Sheets que pueda abrir cualquier persona que lo tenga.", "chatWordsAlt": "Ilustración conceptual. Elige palabras de una conversación en ChatGPT, pega las filas de la lista o un enlace compartido de Google Sheets en Word Garden y repasa en tu cuaderno."});
   Object.assign(T.en,{"phoneFocusTitle": "Start on iPhone", "phoneFocusHint": "Swipe to explore four ways to learn", "phoneStudy": "Word cards", "phoneListen": "Listen with AirPods", "phoneLookup": "Quick lookup", "phoneAI": "Ask AI", "secondaryTitle": "Learn on these devices, too", "phoneStudyAlt": "iPhone flashcard with its definition and example", "phoneListenAlt": "iPhone Listen & learn and headphone-answer options", "phoneLookupAlt": "In-app dictionary results on iPhone", "phoneAIAlt": "Example of an in-app AI language conversation on iPhone"});
   Object.assign(T.nl,{"phoneFocusTitle": "Begin op je iPhone", "phoneFocusHint": "Veeg om vier manieren van leren te bekijken", "phoneStudy": "Woordkaarten", "phoneListen": "Leren met AirPods", "phoneLookup": "Snel opzoeken", "phoneAI": "Vraag AI", "secondaryTitle": "Leer ook op deze apparaten", "phoneStudyAlt": "Woordkaart met betekenis en voorbeeldzin op iPhone", "phoneListenAlt": "Luisterend leren en antwoorden met koptelefoon op iPhone", "phoneLookupAlt": "Zoekresultaten in de iPhone-app", "phoneAIAlt": "Voorbeeld van een AI-taalgesprek in de iPhone-app"});
   Object.assign(T.es,{"phoneFocusTitle": "Empieza en el iPhone", "phoneFocusHint": "Desliza y descubre cuatro formas de aprender", "phoneStudy": "Tarjetas", "phoneListen": "Aprende con AirPods", "phoneLookup": "Busca palabras", "phoneAI": "Pregunta a la IA", "secondaryTitle": "Aprende también en estos dispositivos", "phoneStudyAlt": "Tarjeta de estudio con definición y ejemplo en el iPhone", "phoneListenAlt": "Escucha y aprende con las opciones de auriculares en el iPhone", "phoneLookupAlt": "Resultados del diccionario en la app del iPhone", "phoneAIAlt": "Ejemplo de consulta de idiomas con IA en la app del iPhone"});
   Object.assign(T.en,{"gestureNod": "Nod if you know it.", "gestureShake": "Shake your head if you don’t.", "gestureNodAlt": "Nod if you know it.", "gestureShakeAlt": "Shake your head if you don’t."});
   Object.assign(T.nl,{"gestureNod": "Knik als je het weet.", "gestureShake": "Schud je hoofd als je het nog niet weet.", "gestureNodAlt": "Knik als je het weet.", "gestureShakeAlt": "Schud je hoofd als je het nog niet weet."});
   Object.assign(T.es,{"gestureNod": "Asiente si ya lo sabes.", "gestureShake": "Niega con la cabeza si aún no lo sabes.", "gestureNodAlt": "Asiente si ya lo sabes.", "gestureShakeAlt": "Niega con la cabeza si aún no lo sabes."});
-  Object.assign(T.en,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods and CarPlay. Device and interface illustrations.", "heroArtNote": "Device illustration. The iPhone Duo interface is illustrative."});
-  Object.assign(T.nl,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods en CarPlay. Illustraties van apparaten en interface.", "heroArtNote": "Apparaatillustratie. De interface op de iPhone Duo is ter illustratie."});
-  Object.assign(T.es,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods y CarPlay. Ilustraciones de los dispositivos y de la interfaz.", "heroArtNote": "Ilustración de los dispositivos. La interfaz del iPhone Duo es ilustrativa."});
+  Object.assign(T.en,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods and CarPlay. Device and interface illustrations.", "heroArtNote": "Device illustration."});
+  Object.assign(T.nl,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods en CarPlay. Illustraties van apparaten en interface.", "heroArtNote": "Apparaatillustratie."});
+  Object.assign(T.es,{"heroAlt": "Word Garden: MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, Apple Watch Ultra, AirPods y CarPlay. Ilustraciones de los dispositivos y de la interfaz.", "heroArtNote": "Ilustración de los dispositivos."});
   Object.assign(T.en,{"runningStillAlt": "In the snowy promotional film, a treadmill runner, both running shoes and an iPad appear beside a green “I know it” study card.", "runningStillCaption": "From the promotional film. Listen to words while running and nod to answer."});
   Object.assign(T.nl,{"runningStillAlt": "In de promotiefilm loopt iemand op een loopband in een sneeuwlandschap. Beide hardloopschoenen, de iPad en de groene woordkaart zijn zichtbaar.", "runningStillCaption": "Beeld uit de promotiefilm. Luister tijdens het hardlopen naar woorden en knik om te antwoorden."});
   Object.assign(T.es,{"runningStillAlt": "En el vídeo promocional, una persona corre en una cinta frente a un paisaje nevado. Se ven las zapatillas, el iPad y la tarjeta verde «Lo sé».", "runningStillCaption": "Imagen del vídeo promocional. Escucha palabras mientras corres y asiente para responder."});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
+  Object.assign(T.en,{"chatConceptTag": "Conversation illustration", "chatConceptTitle": "Automatically identify key words and sentences in your conversations", "chatConceptPrompt": "Teach me a natural Dutch sentence.", "chatConceptAnswer": "Het is hier <mark>gezellig</mark>. <mark>Ik ga even uitwaaien.</mark>", "chatWordLabel": "Key word", "chatWord": "gezellig", "chatWordMeaning": "cosy and sociable", "chatSentenceLabel": "Key sentence", "chatSentence": "Ik ga even uitwaaien.", "chatSentenceMeaning": "I’m going out to clear my head."});
+  Object.assign(T.nl,{"chatConceptTag": "Gespreksillustratie", "chatConceptTitle": "Herken automatisch belangrijke woorden en zinnen in je gesprekken", "chatConceptPrompt": "Leer me een natuurlijke Chinese zin.", "chatConceptAnswer": "<mark>开心</mark> · blij.<br><mark>今天我很开心。</mark>", "chatWordLabel": "Belangrijk woord", "chatWord": "开心", "chatWordMeaning": "blij", "chatSentenceLabel": "Belangrijke zin", "chatSentence": "今天我很开心。", "chatSentenceMeaning": "Vandaag ben ik heel blij."});
+  Object.assign(T.es,{"chatConceptTag": "Conversación ilustrativa", "chatConceptTitle": "Identifica automáticamente palabras y frases clave en tus conversaciones", "chatConceptPrompt": "Enséñame una frase natural en neerlandés.", "chatConceptAnswer": "Het is hier <mark>gezellig</mark>. <mark>Ik ga even uitwaaien.</mark>", "chatWordLabel": "Palabra clave", "chatWord": "gezellig", "chatWordMeaning": "acogedor y agradable", "chatSentenceLabel": "Frase clave", "chatSentence": "Ik ga even uitwaaien.", "chatSentenceMeaning": "Voy a salir a despejarme."});
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
   document.querySelectorAll('[data-alt-i]').forEach(function (el) { zh[el.dataset.altI] = el.alt; });
   T.zh = zh;
   var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster-clean-v1.jpg?v=ee8944bc7be5", "quick.png", "safari.png", "study-thin-v15.png", "watch.png", "widget-medium.png", "widget-small.png"];
-  availableImages = availableImages.concat(["running-film-still-v2-1920.webp"]).concat(["iphone-feature-study-thin-v1.png", "iphone-feature-listen-thin-v1.png", "iphone-feature-lookup-thin-v1.png", "iphone-feature-ai-thin-v1.png"]).concat(["chatgpt-words-desktop-v3.webp", "chatgpt-words-mobile-v3.webp"]).concat(["notes-widget-preview-v19.webp"]).concat(["mac-widget-trio-desktop-v2.webp", "mac-widget-trio-mobile-v2.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
+  availableImages = availableImages.concat(["running-film-still-v2-1920.webp"]).concat(["iphone-feature-study-thin-v1.png", "iphone-feature-listen-thin-v1.png", "iphone-feature-lookup-thin-v1.png", "iphone-feature-ai-thin-v1.png"]).concat(["notes-widget-preview-v19.webp"]).concat(["mac-widget-trio-desktop-v2.webp", "mac-widget-trio-mobile-v2.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
   var imageGeneration = 0;
   function setLang(lang) {
