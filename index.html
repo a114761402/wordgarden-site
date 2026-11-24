@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v11.css">
+<link rel="stylesheet" href="responsive-v12.css">
 </head>
 <body>
 <nav>
@@ -36,7 +36,7 @@
 
 <header class="hero wrap" id="top">
   <div class="hero-copy">
-  <p class="hero-kicker" data-i="ecosystemLabel">一个花园，六种陪伴</p>
+  <p class="hero-kicker" data-i="ecosystemLabel">一个花园，处处陪伴</p>
   <h1 data-i="h1">让背单词成为生活</h1>
   <p class="lead" data-i="lead">从耳机到桌面，学习一直在身边。</p>
   <div class="cta">
@@ -48,7 +48,10 @@
   </div>
   </div>
   <figure class="ecosystem-photo">
-    <img src="assets/ecosystem-realistic-v9-1600.webp" srcset="assets/ecosystem-realistic-v9-800.webp 800w, assets/ecosystem-realistic-v9-1600.webp 1600w" sizes="(max-width:700px) calc(100vw - 40px), 534px" width="1600" height="1800" alt="Word Garden · MacBook, iPad, iPhone, Apple Watch, AirPods, CarPlay">
+    <picture>
+      <source media="(min-width:701px)" srcset="assets/ecosystem-landscape-v12-1200.webp 1200w, assets/ecosystem-landscape-v12-2400.webp 2400w" sizes="(max-width:1440px) calc(100vw - 48px), 1392px" width="2400" height="1100">
+    <img src="assets/ecosystem-portrait-v12-1600.webp" srcset="assets/ecosystem-portrait-v12-800.webp 800w, assets/ecosystem-portrait-v12-1600.webp 1600w" sizes="(max-width:700px) calc(100vw - 40px), 534px" width="1600" height="1800" alt="Word Garden · MacBook, iPad, iPhone 18 Pro, iPhone Duo, Apple Watch, AirPods, CarPlay (device and interface illustrations)">
+    </picture>
     <figcaption data-i="heroArtNote">设备与界面为宣传示意</figcaption>
   </figure>
 </header>
@@ -248,7 +251,7 @@
 (function () {
   var T = {
     en: {
-      navGet: 'Get the app', h1: 'Learn words<br>anywhere, any time',
+      navGet: 'Get the app', h1: 'Learn words<br> anywhere, any time',
       lead: 'From your earbuds to your desk. Keep learning.',
       storeSmall: 'Download on the', storeBig: 'App Store', watch: '▶ Watch the film', privacy: 'Privacy Policy', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Nod: got it.<br>Shake: not yet.', f1p: 'Running, commuting, cooking — your phone stays in your pocket. Hear a word, nod if you know it, shake if you don’t, and the next one plays.',
@@ -274,7 +277,7 @@
     },
     // Dutch interface, learning Chinese (zh-nl)
     nl: {
-      navGet: 'Download', h1: 'Leer woorden<br>waar en wanneer je wilt',
+      navGet: 'Download', h1: 'Leer woorden<br> waar en wanneer je wilt',
       lead: 'Van je oortjes tot je bureau. Blijf leren.',
       storeSmall: 'Download in de', storeBig: 'App Store', watch: '▶ Bekijk de film', privacy: 'Privacyverklaring', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Knikken: ken ik.<br>Schudden: nog niet.', f1p: 'Hardlopen, reizen, koken — je telefoon blijft in je zak. Hoor een woord, knik als je het kent, schud als je het niet weet, en het volgende woord begint.',
@@ -300,7 +303,7 @@
     },
     // Spanish interface, learning Dutch (nl-es)
     es: {
-      navGet: 'Descargar', h1: 'Aprende palabras<br>donde y cuando quieras',
+      navGet: 'Descargar', h1: 'Aprende palabras<br> donde y cuando quieras',
       lead: 'De tus auriculares al escritorio. Sigue aprendiendo.',
       storeSmall: 'Descárgalo en el', storeBig: 'App Store', watch: '▶ Ver el vídeo', privacy: 'Política de privacidad', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Asientes: lo sé.<br>Niegas: aún no.', f1p: 'Corriendo, de camino al trabajo, cocinando: el móvil se queda en el bolsillo. Oyes una palabra, asientes si la sabes, niegas si no, y suena la siguiente.',
@@ -340,9 +343,9 @@
   T.en.support = 'Support'; T.en.openData = 'Open data';
   T.nl.support = 'Ondersteuning'; T.nl.openData = 'Open data';
   T.es.support = 'Soporte'; T.es.openData = 'Datos abiertos';
-  Object.assign(T.en,{"languageLabel": "Language", "ecosystemLabel": "One garden. Six ways to learn.", "tabPocket": "Everyday", "tabDesk": "Desk", "tabListen": "Listen", "scenePocket": "Learn on your iPhone. Answer with a nod.", "sceneDesk": "Learn on a bigger screen. Look up words as you work.", "sceneListen": "Learn on your wrist. Listen in the car.", "filmEyebrow": "See it in everyday life", "filmCopy": "From listening to quick look-ups. Meet Word Garden."});
-  Object.assign(T.nl,{"languageLabel": "Taal", "ecosystemLabel": "Eén tuin. Zes manieren om te leren.", "tabPocket": "Bij je", "tabDesk": "Bureau", "tabListen": "Luisteren", "scenePocket": "Leer op je iPhone. Antwoord met een knik.", "sceneDesk": "Leer op een groter scherm. Zoek woorden op terwijl je werkt.", "sceneListen": "Leer op je pols. Luister in de auto.", "filmEyebrow": "Zo past het in je dag", "filmCopy": "Van luisterend leren tot even opzoeken. Ontdek Word Garden."});
-  Object.assign(T.es,{"languageLabel": "Idioma", "ecosystemLabel": "Un jardín. Seis formas de aprender.", "tabPocket": "Contigo", "tabDesk": "Escritorio", "tabListen": "Escuchar", "scenePocket": "Aprende en el iPhone. Responde asintiendo.", "sceneDesk": "Aprende en una pantalla grande. Busca palabras mientras trabajas.", "sceneListen": "Aprende en la muñeca. Escucha en el coche.", "filmEyebrow": "Mira cómo encaja en tu día", "filmCopy": "De escuchar y aprender a buscar una palabra. Descubre Word Garden."});
+  Object.assign(T.en,{"languageLabel": "Language", "ecosystemLabel": "One garden. Learn anywhere.", "tabPocket": "Everyday", "tabDesk": "Desk", "tabListen": "Listen", "scenePocket": "Learn on your iPhone. Answer with a nod.", "sceneDesk": "Learn on a bigger screen. Look up words as you work.", "sceneListen": "Learn on your wrist. Listen in the car.", "filmEyebrow": "See it in everyday life", "filmCopy": "From listening to quick look-ups. Meet Word Garden."});
+  Object.assign(T.nl,{"languageLabel": "Taal", "ecosystemLabel": "Eén tuin. Overal leren.", "tabPocket": "Bij je", "tabDesk": "Bureau", "tabListen": "Luisteren", "scenePocket": "Leer op je iPhone. Antwoord met een knik.", "sceneDesk": "Leer op een groter scherm. Zoek woorden op terwijl je werkt.", "sceneListen": "Leer op je pols. Luister in de auto.", "filmEyebrow": "Zo past het in je dag", "filmCopy": "Van luisterend leren tot even opzoeken. Ontdek Word Garden."});
+  Object.assign(T.es,{"languageLabel": "Idioma", "ecosystemLabel": "Un jardín. Aprende donde quieras.", "tabPocket": "Contigo", "tabDesk": "Escritorio", "tabListen": "Escuchar", "scenePocket": "Aprende en el iPhone. Responde asintiendo.", "sceneDesk": "Aprende en una pantalla grande. Busca palabras mientras trabajas.", "sceneListen": "Aprende en la muñeca. Escucha en el coche.", "filmEyebrow": "Mira cómo encaja en tu día", "filmCopy": "De escuchar y aprender a buscar una palabra. Descubre Word Garden."});
   Object.assign(T.en,{"macOverview": "Learn and look up words on your Mac, or answer directly from a desktop widget.", "watchTitle": "Learn right on your wrist"});
   Object.assign(T.nl,{"macOverview": "Leer en zoek woorden op je Mac, of antwoord direct via een bureaubladwidget.", "watchTitle": "Leren, gewoon op je pols"});
   Object.assign(T.es,{"macOverview": "Aprende y busca palabras en el Mac, o responde desde un widget del escritorio.", "watchTitle": "Aprende desde tu muñeca"});
