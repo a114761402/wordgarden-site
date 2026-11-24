@@ -11,7 +11,8 @@ from urllib.parse import urlsplit
 import shutil, sys
 source, destination, public = map(Path, sys.argv[1:])
 runtime = ['index.html', 'privacy.html', 'support.html', 'open-data.html',
-           'light.css', 'responsive-v19.css', 'language.js', 'document-language.js',
+           'light.css', 'responsive-v23.css', 'language.js', 'document-language.js',
+           'assets/airpods-gesture-nod-v1.webp', 'assets/airpods-gesture-shake-v1.webp',
            'assets/ecosystem-realistic-v9-800.webp',
            'assets/ecosystem-realistic-v9-1600.webp', 'assets/mobile-big-screens.webp',
            'assets/ecosystem-eight-keyboard-desktop-1200.webp', 'assets/ecosystem-eight-keyboard-desktop-2400.webp',
