@@ -14,8 +14,8 @@ runtime = ['index.html', 'privacy.html', 'support.html', 'open-data.html',
            'light.css', 'responsive-v17.css', 'language.js', 'document-language.js',
            'assets/ecosystem-realistic-v9-800.webp',
            'assets/ecosystem-realistic-v9-1600.webp', 'assets/mobile-big-screens.webp',
-           'assets/ecosystem-eight-desktop-1200.webp', 'assets/ecosystem-eight-desktop-2400.webp',
-           'assets/ecosystem-eight-mobile-800.webp', 'assets/ecosystem-eight-mobile-1600.webp']
+           'assets/ecosystem-eight-keyboard-desktop-1200.webp', 'assets/ecosystem-eight-keyboard-desktop-2400.webp',
+           'assets/ecosystem-eight-keyboard-mobile-800.webp', 'assets/ecosystem-eight-keyboard-mobile-1600.webp']
 pairs = [(source / name, destination / name) for name in runtime]
 for language in ['zh', 'en', 'nl', 'es']:
     for path in (source / 'assets' / language).iterdir():
