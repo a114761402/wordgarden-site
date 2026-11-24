@@ -63,8 +63,8 @@
       <h2 class="film-heading" data-i="watch">▶ 看介绍片</h2>
       <p class="film-copy" data-i="filmCopy">从听着背到随手查词，认识 Word Garden。</p></div>
   <div class="film reveal" id="film">
-    <video controls playsinline preload="metadata" poster="assets/zh/poster.jpg" data-src="film-1080.mp4" data-poster="poster.jpg">
-      <source src="assets/zh/film-1080.mp4" type="video/mp4">
+    <video controls playsinline preload="metadata" poster="assets/zh/poster.jpg" data-src="film-1080.mp4?v=48438b339669" data-poster="poster.jpg">
+      <source src="assets/zh/film-1080.mp4?v=48438b339669" type="video/mp4">
     </video>
   </div>
     </div>
@@ -368,10 +368,10 @@
       el.onerror = own ? null : function () { el.onerror = null; el.src = 'assets/en/' + el.dataset.src; };
       el.src = 'assets/' + lang + '/' + el.dataset.src;
     });
-    var src = 'assets/' + lang + '/film-1080.mp4', source = video.querySelector('source');
+    var src = 'assets/' + lang + '/film-1080.mp4?v=48438b339669', source = video.querySelector('source');
     if (video.currentSrc.indexOf(src) < 0) {
       video.pause();
-      source.onerror = own ? null : function () { source.onerror = null; source.src = 'assets/en/film-1080.mp4'; video.load(); };
+      source.onerror = own ? null : function () { source.onerror = null; source.src = 'assets/en/film-1080.mp4?v=48438b339669'; video.load(); };
       source.src = src; video.load();
       video.poster = 'assets/' + lang + '/poster.jpg';
       if (!own) { var p = new Image(); p.onerror = function () { if (video.poster.indexOf('/' + lang + '/') >= 0) video.poster = 'assets/en/poster.jpg'; }; p.src = video.poster; }
