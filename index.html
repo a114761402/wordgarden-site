@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v14.css?v=29e649377d3e">
+<link rel="stylesheet" href="responsive-v16.css?v=639827b97bc2">
 </head>
 <body>
 <nav>
@@ -86,7 +86,7 @@
         </ul>
       </div>
       <div class="mac-showcase">
-        <figure class="platform-shot"><img data-src="mac-home-detail-v14.webp" src="assets/zh/mac-home-detail-v14.webp" alt="Word Garden on Mac" loading="lazy" width="1600" height="1000" decoding="async"><figcaption data-i="macHomeLabel">Mac · 学习与查词</figcaption></figure>
+        <figure class="platform-shot mac-desktop-scene"><picture><source media="(max-width:700px)" width="800" height="1340" data-src="mac-desktop-focus-v16.webp" srcset="assets/zh/mac-desktop-focus-v16.webp"><img data-src="mac-desktop-v16.webp" src="assets/zh/mac-desktop-v16.webp" alt="Mac desktop widgets and a separate lookup window" loading="lazy" width="1800" height="1080" decoding="async"></picture><figcaption data-i="macHomeLabel">Mac · 桌面组件与独立查词窗 · 界面示意<br>点查词组件后，在独立浮窗中输入。</figcaption></figure>
         <div class="lookup-detail"><div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div><img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="Mac quick lookup"><p data-i="macQuickLabel">Mac · 一键查词</p></div>
       </div>
     </div>
@@ -146,8 +146,9 @@
         </ul>
       </div>
       <div class="stage widget-platforms">
-        <figure><img data-src="mac-widget-detail-v14.webp" src="assets/zh/mac-widget-detail-v14.webp" alt="Mac desktop widget" loading="lazy" width="1600" height="1600" decoding="async"><figcaption data-i="macWidgetLabel">Mac 桌面组件</figcaption></figure>
-        <figure><img data-src="widget-medium.png" src="assets/zh/widget-medium.png" alt="iPhone and iPad widget"><img class="widget-compact" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="Small iPhone and iPad widget"><figcaption data-i="phoneWidgetLabel">iPhone 与 iPad 组件</figcaption></figure>
+        <figure><img data-src="widget-mac-v16.webp" src="assets/zh/widget-mac-v16.webp" alt="Mac large learning widget" loading="lazy" width="960" height="960"><figcaption data-i="macWidgetLabel">Mac 桌面组件</figcaption></figure>
+        <figure><img data-src="widget-iphone-v16.webp" src="assets/zh/widget-iphone-v16.webp" alt="iPhone medium learning widget" loading="lazy" width="960" height="449"><figcaption data-i="phoneWidgetLabel">iPhone 主屏组件</figcaption></figure>
+        <figure><img data-src="widget-ipad-v16.webp" src="assets/zh/widget-ipad-v16.webp" alt="iPad supported large WidgetKit preview" loading="lazy" width="960" height="1008"><figcaption data-i="ipadWidgetLabel">iPad · 大号组件预览</figcaption></figure>
       </div>
     </div>
 
@@ -341,15 +342,15 @@
   Object.assign(T.en,{"macOverview": "Learn and look up words on your Mac, or answer directly from a desktop widget.", "watchTitle": "Learn right on your wrist"});
   Object.assign(T.nl,{"macOverview": "Leer en zoek woorden op je Mac, of antwoord direct via een bureaubladwidget.", "watchTitle": "Leren, gewoon op je pols"});
   Object.assign(T.es,{"macOverview": "Aprende y busca palabras en el Mac, o responde desde un widget del escritorio.", "watchTitle": "Aprende desde tu muñeca"});
-  Object.assign(T.en,{"allFree": "All features are free", "macHomeLabel": "Mac · Learn and look up words", "macQuickLabel": "Mac · Quick lookup", "macAIlabel": "Mac · AI conversations and history · Interface illustration", "macWidgetLabel": "Mac desktop widget", "phoneWidgetLabel": "iPhone and iPad widgets", "galleryMac": "Mac · Learn at your desk", "galleryIpad": "iPad · A bigger word card", "galleryPhone": "iPhone · Learn on the go", "galleryWatch": "Apple Watch · Learn on your wrist"});
-  Object.assign(T.nl,{"allFree": "Alle functies zijn gratis", "macHomeLabel": "Mac · Leren en woorden opzoeken", "macQuickLabel": "Mac · Snel opzoeken", "macAIlabel": "Mac · AI-gesprekken en geschiedenis · Interfacevoorbeeld", "macWidgetLabel": "Mac-bureaubladwidget", "phoneWidgetLabel": "Widgets voor iPhone en iPad", "galleryMac": "Mac · Leren aan je bureau", "galleryIpad": "iPad · Woordkaarten op groot scherm", "galleryPhone": "iPhone · Onderweg leren", "galleryWatch": "Apple Watch · Leren op je pols"});
-  Object.assign(T.es,{"allFree": "Todas las funciones son gratis", "macHomeLabel": "Mac · Aprende y consulta palabras", "macQuickLabel": "Mac · Consulta rápida", "macAIlabel": "Mac · Conversaciones e historial de IA · Interfaz ilustrativa", "macWidgetLabel": "Widget del escritorio del Mac", "phoneWidgetLabel": "Widgets para iPhone y iPad", "galleryMac": "Mac · Aprende en tu escritorio", "galleryIpad": "iPad · Tarjetas en pantalla grande", "galleryPhone": "iPhone · Aprende donde estés", "galleryWatch": "Apple Watch · Aprende en tu muñeca"});
+  Object.assign(T.en,{"allFree": "All features are free", "macHomeLabel": "Mac · Desktop widgets and a separate lookup window · Interface illustration<br>Click the lookup widget, then type in the separate window.", "macQuickLabel": "Mac · Quick lookup", "macAIlabel": "Mac · AI conversations and history · Interface illustration", "macWidgetLabel": "Mac desktop widget", "phoneWidgetLabel": "iPhone Home Screen widget", "galleryMac": "Mac · Learn at your desk", "galleryIpad": "iPad · A bigger word card", "galleryPhone": "iPhone · Learn on the go", "galleryWatch": "Apple Watch · Learn on your wrist", "ipadWidgetLabel": "iPad · Large widget preview"});
+  Object.assign(T.nl,{"allFree": "Alle functies zijn gratis", "macHomeLabel": "Mac · Bureaubladwidgets en een apart zoekvenster · Interfacevoorbeeld<br>Klik op de zoekwidget en typ in het aparte venster.", "macQuickLabel": "Mac · Snel opzoeken", "macAIlabel": "Mac · AI-gesprekken en geschiedenis · Interfacevoorbeeld", "macWidgetLabel": "Mac-bureaubladwidget", "phoneWidgetLabel": "Widget op je iPhone-beginscherm", "galleryMac": "Mac · Leren aan je bureau", "galleryIpad": "iPad · Woordkaarten op groot scherm", "galleryPhone": "iPhone · Onderweg leren", "galleryWatch": "Apple Watch · Leren op je pols", "ipadWidgetLabel": "iPad · Voorbeeld van grote widget"});
+  Object.assign(T.es,{"allFree": "Todas las funciones son gratis", "macHomeLabel": "Mac · Widgets de escritorio y ventana de consulta independiente · Interfaz ilustrativa<br>Haz clic en el widget de consulta y escribe en la ventana independiente.", "macQuickLabel": "Mac · Consulta rápida", "macAIlabel": "Mac · Conversaciones e historial de IA · Interfaz ilustrativa", "macWidgetLabel": "Widget del escritorio del Mac", "phoneWidgetLabel": "Widget del inicio del iPhone", "galleryMac": "Mac · Aprende en tu escritorio", "galleryIpad": "iPad · Tarjetas en pantalla grande", "galleryPhone": "iPhone · Aprende donde estés", "galleryWatch": "Apple Watch · Aprende en tu muñeca", "ipadWidgetLabel": "iPad · Vista previa del widget grande"});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
   T.zh = zh;
   var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster.jpg", "quick.png", "safari.png", "study-thin-v15.png", "watch.png", "widget-medium.png", "widget-small.png"];
-  availableImages = availableImages.concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
+  availableImages = availableImages.concat(["mac-desktop-v16.webp", "mac-desktop-focus-v16.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
   var imageGeneration = 0;
   function setLang(lang) {

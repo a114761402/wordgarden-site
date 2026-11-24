@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 import shutil, sys
 source, destination, public = map(Path, sys.argv[1:])
 runtime = ['index.html', 'privacy.html', 'support.html', 'open-data.html',
-           'light.css', 'responsive-v14.css', 'language.js', 'document-language.js',
+           'light.css', 'responsive-v16.css', 'language.js', 'document-language.js',
            'assets/ecosystem-realistic-v9-800.webp',
            'assets/ecosystem-realistic-v9-1600.webp', 'assets/mobile-big-screens.webp',
            'assets/ecosystem-rectangle-v15-1200.webp', 'assets/ecosystem-rectangle-v15-2400.webp',
