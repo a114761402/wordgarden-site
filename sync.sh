@@ -1,21 +1,42 @@
 #!/bin/bash
-# Copies the promo site and privacy page into this GitHub Pages repo (wordgarden.me).
+# Sync the reviewed canonical website without deleting existing data.
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 site="$here/../launch-2026-11-18/site"
 web="$here/../.."
-cp "$site/index.html" "$here/index.html"
-cp "$web/public/privacy.html" "$here/privacy.html"
-cp "$web/public/support.html" "$here/support.html"
-for l in zh en nl es; do
-  mkdir -p "$here/assets/$l"
-  rsync -a --delete --exclude 'film.mp4' --exclude '.*' "$site/assets/$l/" "$here/assets/$l/"
-done
-# Word-data download page and exactly the files it links to (CC BY-SA 4.0 data)
-cp "$web/public/open-data.html" "$here/open-data.html"
-rm -rf "$here/dictionaries" "$here/library"
-grep -oE 'href="/(dictionaries|library)/[^"#]+"' "$here/open-data.html" | sed 's/^href="\///;s/"$//' | sort -u | while read -r f; do
-  mkdir -p "$here/$(dirname "$f")"; cp "$web/public/$f" "$here/$f"
-done
-echo wordgarden.nl > "$here/CNAME"
-touch "$here/.nojekyll"
+python3 - "$site" "$here" "$web/public" <<'PY'
+from pathlib import Path
+from html.parser import HTMLParser
+from urllib.parse import urlsplit
+import shutil, sys
+source, destination, public = map(Path, sys.argv[1:])
+runtime = ['index.html', 'privacy.html', 'support.html', 'open-data.html',
+           'light.css', 'responsive-v9.css', 'language.js', 'document-language.js',
+           'responsive-v9.js', 'assets/ecosystem-realistic-v9-800.webp',
+           'assets/ecosystem-realistic-v9-1600.webp', 'assets/mobile-big-screens.webp']
+pairs = [(source / name, destination / name) for name in runtime]
+for language in ['zh', 'en', 'nl', 'es']:
+    for path in (source / 'assets' / language).iterdir():
+        if path.is_file() and not path.name.startswith('.') and path.name != 'film.mp4':
+            pairs.append((path, destination / path.relative_to(source)))
+class Downloads(HTMLParser):
+    def __init__(self): super().__init__(); self.paths = set()
+    def handle_starttag(self, tag, attributes):
+        if tag != 'a': return
+        url = urlsplit(dict(attributes).get('href', ''))
+        if url.scheme or url.netloc: return
+        name = url.path.lstrip('/')
+        if name.startswith(('library/', 'dictionaries/')):
+            if '..' in Path(name).parts: raise ValueError('Invalid download path')
+            self.paths.add(name)
+links = Downloads(); links.feed((source / 'open-data.html').read_text())
+pairs.extend((public / name, destination / name) for name in sorted(links.paths))
+for origin, _ in pairs:
+    if not origin.is_file(): raise FileNotFoundError(origin)
+for origin, target in pairs:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(origin, target)
+(destination / 'CNAME').write_text('wordgarden.nl\n')
+(destination / '.nojekyll').touch()
+print(f'Synced {len(pairs)} reviewed runtime/data files; no files deleted.')
+PY

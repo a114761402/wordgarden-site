@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Word Garden Daily</title>
 <meta name="description" content="Word Garden Daily: learn words anywhere — nod or shake with AirPods, ask AI, widgets, Apple Watch, Mac and CarPlay.">
-<meta name="theme-color" content="#F7F5EF">
+<meta name="theme-color" content="#ffffff">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:title" content="Word Garden Daily">
-<meta property="og:description" content="随时随地，把词背进生活 · Learn words anywhere, any time">
+<meta property="og:description" content="让背单词成为生活 · Learn words anywhere, any time">
 <meta property="og:image" content="https://wordgarden.nl/assets/en/poster.jpg">
 <meta property="og:url" content="https://wordgarden.nl/">
 <meta property="og:type" content="website">
@@ -16,199 +16,16 @@
 <meta name="apple-itunes-app" content="app-id=6821732641">
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
-<style>
-  /* One calm column: hero film first, then feature rows that alternate copy and real screens, closing on the download. */
-  :root {
-    --bg: #F7F5EF; --card: #FFFFFF; --ink: #1E3123; --muted: #5B6B5E; --line: #E5E2D8;
-    --green: #2E7D4F; --green-soft: #E3F0E7; --blue: #4A80B5;
-    --nav-bg: rgba(247, 245, 239, .84); --seg-bg: #ECE9E0; --seg-on: #FFFFFF; --chip-bg: #FFFFFF; --key-bg: #FFFFFF; --key-edge: #C9D2DA;
-    --store-bg: #111111; --store-fg: #FFFFFF; --solid-bg: #1E3123; --solid-fg: #FFFFFF;
-    --sky-a: #E9F1F9; --sky-b: #DCE9F6; --sky-c: #F4F7FA; --leaf-a: #EEF5EF; --leaf-b: #E0EEE3; --leaf-c: #F6F8F4;
-    --paper-a: #FBFAF6; --paper-b: #F0EDE3; --steel-a: #E7ECF2; --steel-b: #D6DEE8;
-    --shadow-c: rgba(30, 49, 35, .28);
-    --radius: 28px; --shadow: 0 24px 60px -24px var(--shadow-c), 0 2px 8px rgba(30, 49, 35, .06);
-    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-    --bg: #121814; --card: #1B231E; --ink: #E6EDE7; --muted: #A1B0A5; --line: #2B352F;
-    --green: #74C493; --green-soft: #22382A; --blue: #6FA4D6;
-    --nav-bg: rgba(18, 24, 20, .84); --seg-bg: #232C26; --seg-on: #34403A; --chip-bg: #1B231E; --key-bg: #2A332D; --key-edge: #0C100D;
-    --store-bg: #F1F4F1; --store-fg: #111111; --solid-bg: #E6EDE7; --solid-fg: #121814;
-    --sky-a: #1C2836; --sky-b: #16212D; --sky-c: #1E2731; --leaf-a: #1C2A21; --leaf-b: #17231B; --leaf-c: #1E2822;
-    --paper-a: #202620; --paper-b: #1A1F1A; --steel-a: #1D232B; --steel-b: #171C23; --shadow-c: rgba(0, 0, 0, .6); color-scheme: dark } }
-  :root[data-theme="dark"] {
-    --bg: #121814; --card: #1B231E; --ink: #E6EDE7; --muted: #A1B0A5; --line: #2B352F;
-    --green: #74C493; --green-soft: #22382A; --blue: #6FA4D6;
-    --nav-bg: rgba(18, 24, 20, .84); --seg-bg: #232C26; --seg-on: #34403A; --chip-bg: #1B231E; --key-bg: #2A332D; --key-edge: #0C100D;
-    --store-bg: #F1F4F1; --store-fg: #111111; --solid-bg: #E6EDE7; --solid-fg: #121814;
-    --sky-a: #1C2836; --sky-b: #16212D; --sky-c: #1E2731; --leaf-a: #1C2A21; --leaf-b: #17231B; --leaf-c: #1E2822;
-    --paper-a: #202620; --paper-b: #1A1F1A; --steel-a: #1D232B; --steel-b: #171C23; --shadow-c: rgba(0, 0, 0, .6); color-scheme: dark }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 11; background: var(--nav-bg); }
-  img, video { display: block; max-width: 100%; }
-  a { color: inherit; }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
-  .wrap { width: 100%; max-width: 1152px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-
-  nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; font-size: 17px; }
-  .brand img { width: 32px; height: 32px; border-radius: 8px; }
-  .spacer { flex: 1; }
-  .lang { display: flex; background: var(--seg-bg); border-radius: 999px; padding: 3px; }
-  .lang button { border: 0; background: none; font: inherit; font-size: 13px; padding: 5px 11px; border-radius: 999px; color: var(--muted); cursor: pointer; }
-  .lang button[aria-pressed="true"] { background: var(--seg-on); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; }
-
-  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease; white-space: nowrap; }
-  .btn:active { transform: scale(.98); }
-  .btn-store { background: var(--store-bg); color: var(--store-fg); padding: 12px 22px 12px 18px; font-size: 16px; box-shadow: 0 10px 24px -10px var(--shadow-c); }
-  .btn-store svg { width: 22px; height: 22px; }
-  .btn-store small { display: block; font-size: 11px; font-weight: 500; opacity: .75; line-height: 1.1; }
-  .btn-store span { display: block; line-height: 1.15; }
-  .btn-sm { padding: 8px 14px; font-size: 14px; background: var(--solid-bg); color: var(--solid-fg); }
-  .btn-ghost { padding: 12px 20px; font-size: 16px; color: var(--ink); background: var(--chip-bg); box-shadow: inset 0 0 0 1px var(--line); }
-
-  .hero { text-align: center; padding-block: 72px 40px; }
-  .hero .icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 24px; box-shadow: var(--shadow); }
-  h1 { font-size: clamp(36px, 6.4vw, 68px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 800; text-wrap: balance; }
-  .lead { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 640px; margin: 0 auto 30px; }
-  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .meta { margin-top: 18px; font-size: 14px; color: var(--muted); }
-  .film { margin: 48px auto 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--sky-b); aspect-ratio: 16 / 9; max-width: 100%; }
-  .film video { width: 100%; height: 100%; object-fit: cover; }
-
-  section { padding-block: 64px; }
-  .eyebrow { font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: .06em; text-transform: uppercase; margin: 0 0 10px; }
-  h2 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.15; letter-spacing: -.015em; margin: 0 0 14px; font-weight: 800; text-wrap: balance; }
-  .sec-head { text-align: center; max-width: 712px; margin: 0 auto 44px; }
-  .sec-head.tight { margin-bottom: 30px; }
-  .sec-head p { color: var(--muted); font-size: 18px; margin: 0; }
-  .feature { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; padding-block: 40px; }
-  .feature > * { min-width: 0; }
-  .feature.flip .copy { order: 2; }
-  .copy p { font-size: 18px; color: var(--muted); margin: 0 0 16px; max-width: 34em; }
-  .copy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-  .copy li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; }
-  .copy li::before { content: "✓"; flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 800; display: grid; place-items: center; }
-  .copy .note { font-size: 13px; opacity: .85; margin-top: 16px; }
-  .stage { position: relative; border-radius: var(--radius); background: linear-gradient(160deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%); min-height: 420px; display: grid; place-items: center; overflow: hidden; padding: 32px; }
-  .stage.green { background: linear-gradient(160deg, var(--leaf-a) 0%, var(--leaf-b) 60%, var(--leaf-c) 100%); }
-  .stage.cream { background: linear-gradient(160deg, var(--paper-a) 0%, var(--paper-b) 100%); }
-
-  .nod { display: flex; align-items: center; gap: 8px; }
-  .nod .head { width: 46%; max-width: 230px; }
-  .nod .card { width: 54%; max-width: 280px; filter: drop-shadow(0 18px 30px var(--shadow-c)); }
-  .pair { position: relative; width: 100%; }
-  .pair .mac { width: 88%; border-radius: 14px; box-shadow: var(--shadow); }
-  .pair .phone { position: absolute; right: 0; bottom: -6%; width: 30%; filter: drop-shadow(0 20px 30px var(--shadow-c)); }
-  .keys { position: absolute; top: 28px; left: 28px; display: flex; gap: 8px; }
-  .key { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 11px; background: var(--key-bg); box-shadow: 0 2px 0 var(--key-edge), 0 4px 12px rgba(0,0,0,.08); display: grid; place-items: center; font-weight: 700; font-size: 17px; }
-  .quick { width: 82%; margin-top: 40px; filter: drop-shadow(0 26px 40px var(--shadow-c)); border-radius: 22px; }
-  [hidden] { display: none !important; }
-  .shot { width: 100%; max-width: 340px; filter: drop-shadow(0 22px 36px var(--shadow-c)); }
-  .shot.wide { max-width: 100%; border-radius: 14px; }
-  .widgets { display: grid; grid-template-columns: auto auto; gap: 18px; align-items: start; }
-  .widgets img { filter: drop-shadow(0 16px 28px var(--shadow-c)); }
-  .widgets .medium { grid-column: 1 / -1; width: 100%; max-width: 440px; }
-  .widgets .small { width: 100%; max-width: 205px; }
-  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-block: 40px; }
-  .tile { background: var(--card); border-radius: var(--radius); padding: 32px; box-shadow: 0 1px 0 var(--line); display: flex; flex-direction: column; min-width: 0; }
-  .tile h3 { font-size: 24px; margin: 0 0 8px; letter-spacing: -.01em; }
-  .tile p { color: var(--muted); margin: 0 0 24px; }
-  .tile .art { margin-top: auto; border-radius: 20px; display: grid; place-items: center; padding: 24px; min-height: 300px; background: linear-gradient(160deg, var(--sky-a), var(--sky-b)); }
-  .tile .art.steel { background: linear-gradient(160deg, var(--steel-a), var(--steel-b)); }
-  .tile .art img { max-height: 280px; width: auto; }
-  .tile .art.steel img { max-height: 220px; }
-
-  .screens { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 28px max(16px, env(safe-area-inset-left, 0px)); justify-content: center; scrollbar-width: none; }
-  .screens::-webkit-scrollbar { display: none; }
-  .screens figure { margin: 0; flex: none; width: 230px; scroll-snap-align: center; text-align: center; }
-  .screens img { width: 100%; filter: drop-shadow(0 18px 30px var(--shadow-c)); }
-  .screens figcaption { margin-top: 14px; font-size: 15px; font-weight: 600; }
-
-  .chip { padding: 9px 18px; border-radius: 999px; background: var(--chip-bg); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 16px; }
-  .chip.on { background: var(--blue); color: var(--store-fg); box-shadow: none; }
-  .langs { display: grid; gap: 22px; justify-items: center; }
-  .langs .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center; }
-  .langs .lab { font-weight: 700; color: var(--muted); }
-  .devices { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; color: var(--muted); font-weight: 600; }
-
-  .final { text-align: center; padding-block: 88px 96px; }
-  .final .icon { width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 22px; box-shadow: var(--shadow); }
-  footer { border-top: 1px solid var(--line); padding-block: 28px 40px; font-size: 13px; color: var(--muted); }
-  footer p { margin: 0 0 6px; }
-  footer a { color: inherit; text-underline-offset: 2px; }
-
-  .reveal { transition: transform .7s ease; }
-  .reveal.lift { transform: translateY(14px); }
-  @media (prefers-reduced-motion: reduce) { .reveal, .reveal.lift { transform: none; transition: none; } html { scroll-behavior: auto; } }
-
-  /* iPad: keep two columns, just tighter */
-  @media (min-width: 701px) and (max-width: 1100px) {
-    .feature { gap: 36px; padding-block: 32px; }
-    .stage { min-height: 340px; padding: 24px; }
-    .copy p { font-size: 17px; }
-    .duo { gap: 20px; }
-    .tile { padding: 26px; }
-    .tile .art { min-height: 240px; padding: 20px; }
-    .tile .art img { max-height: 230px; }
-    .tile .art.steel img { max-height: 180px; }
-  }
-  @media (max-width: 700px) {
-    .feature, .feature.flip { grid-template-columns: 1fr; gap: 24px; padding-block: 28px; }
-    .feature.flip .copy { order: 0; }
-    .duo { grid-template-columns: 1fr; gap: 16px; }
-    .stage { min-height: 0; padding: 24px; }
-  }
-  @media (max-width: 860px) {
-    .screens { justify-content: flex-start; justify-content: safe center; }
-    .screens figure { width: 180px; }
-    section { padding-block: 44px; }
-    .hero { padding-block: 48px 24px; }
-    .film { margin-top: 36px; border-radius: 18px; }
-  }
-  @media (max-width: 520px) {
-    .brand span { display: none; }
-    nav .wrap { gap: 8px; }
-    .lang button { padding: 5px 9px; }
-    .btn-sm { padding: 8px 12px; }
-    .keys { top: 18px; left: 18px; }
-    .key { min-width: 38px; height: 38px; font-size: 15px; }
-    .quick { width: 100%; margin-top: 56px; }
-    .tile { padding: 22px; }
-    .tile .art { min-height: 0; padding: 18px; }
-    .tile .art img { max-height: 240px; }
-    .hero { padding-top: 36px; }
-    .hero .icon { width: 76px; height: 76px; border-radius: 18px; margin-bottom: 18px; }
-    h1 { font-size: 32px; }
-    .lead { font-size: 16px; margin-bottom: 24px; }
-    .btn-store, .btn-ghost { padding-block: 11px; font-size: 15px; }
-    .film { margin-top: 28px; border-radius: 14px; }
-    .copy p { font-size: 16px; }
-    .copy li { font-size: 15px; }
-    .pair .phone { width: 36%; }
-    .sec-head { margin-bottom: 28px; }
-    .sec-head p { font-size: 16px; }
-    .screens { gap: 16px; }
-    .screens figure { width: 180px; }
-    .chip { padding: 7px 14px; font-size: 15px; }
-    .langs .row { gap: 10px; }
-    .devices { gap: 6px 18px; font-size: 15px; margin-top: 28px; }
-    .final { padding-block: 56px 64px; }
-    .final .icon { width: 68px; height: 68px; border-radius: 16px; }
-  }
-  /* finger-sized targets on touch screens */
-  @media (pointer: coarse) { .lang button { min-height: 32px; } .btn-sm { min-height: 36px; } }
-</style>
+<link rel="stylesheet" href="light.css">
+<link rel="stylesheet" href="responsive-v9.css">
 </head>
 <body>
 <nav>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/zh/icon.png" alt=""><span>Word Garden Daily</span></a>
     <div class="spacer"></div>
-    <div class="lang" role="group" aria-label="Language">
+    <button class="language-toggle" type="button" aria-expanded="false" aria-controls="site-languages" data-i="languageLabel">语言</button>
+    <div id="site-languages" class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="zh">中文</button>
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="nl">NL</button>
@@ -219,9 +36,10 @@
 </nav>
 
 <header class="hero wrap" id="top">
-  <img class="icon" src="assets/zh/icon.png" alt="Word Garden Daily">
-  <h1 data-i="h1">随时随地，<br>把词背进生活</h1>
-  <p class="lead" data-i="lead">戴着耳机点头、摇头就能背词；有不会的问 AI；桌面组件、手表和 CarPlay 上随手就答。每天一点点，花园就长大。</p>
+  <div class="hero-copy">
+  <p class="hero-kicker" data-i="ecosystemLabel">一个花园，六种陪伴</p>
+  <h1 data-i="h1">让背单词成为生活</h1>
+  <p class="lead" data-i="lead">从耳机到桌面，学习一直在身边。</p>
   <div class="cta">
     <a class="btn btn-store store-link" href="https://apps.apple.com/app/id6821732641">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.73c.02 2.4 2.1 3.2 2.13 3.2-.02.06-.33 1.14-1.1 2.26-.66.97-1.35 1.94-2.43 1.96-1.06.02-1.4-.63-2.62-.63-1.21 0-1.6.61-2.6.65-1.05.04-1.84-1.05-2.51-2.02-1.37-1.97-2.41-5.58-1.01-8.01.7-1.21 1.94-1.97 3.28-1.99 1.03-.02 2 .69 2.62.69.63 0 1.81-.86 3.05-.73.52.02 1.98.21 2.92 1.58-.08.05-1.74 1.02-1.73 3.04ZM14.36 5.1c.55-.67.93-1.6.82-2.53-.8.03-1.77.53-2.34 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.81-.45 2.36-1.12Z"/></svg>
@@ -229,17 +47,42 @@
     </a>
     <a class="btn btn-ghost" href="#film" data-i="watch">▶ 看介绍片</a>
   </div>
-  <p class="meta" data-i="meta">iPhone · iPad · Mac · Apple Watch · CarPlay</p>
+  </div>
+  <figure class="ecosystem-photo">
+    <img src="assets/ecosystem-realistic-v9-1600.webp" srcset="assets/ecosystem-realistic-v9-800.webp 800w, assets/ecosystem-realistic-v9-1600.webp 1600w" sizes="(max-width:700px) calc(100vw - 40px), 534px" width="1600" height="1800" alt="Word Garden · MacBook, iPad, iPhone, Apple Watch, AirPods, CarPlay">
+    <figcaption data-i="heroArtNote">设备与界面为宣传示意</figcaption>
+  </figure>
+  <section class="mobile-showcase" aria-label="Word Garden · iPhone, AirPods, MacBook, iPad, Apple Watch, CarPlay">
+    <div class="device-tabs" role="tablist" aria-label="Word Garden">
+      <button id="tab-pocket" role="tab" aria-selected="true" aria-controls="panel-pocket" tabindex="0" data-i="tabPocket">随身</button>
+      <button id="tab-desk" role="tab" aria-selected="false" aria-controls="panel-desk" tabindex="-1" data-i="tabDesk">桌面</button>
+      <button id="tab-listen" role="tab" aria-selected="false" aria-controls="panel-listen" tabindex="-1" data-i="tabListen">随行</button>
+    </div>
+<div id="panel-pocket" class="device-panel pocket" role="tabpanel" tabindex="0" aria-labelledby="tab-pocket"><div class="device-pair"><figure class="focus-device phone"><div class="device-crop" style="--x:1185;--y:1170;--w:255;--h:510"><img src="assets/ecosystem-realistic-v9-1600.webp" alt="" width="1600" height="1800"></div><figcaption>iPhone</figcaption></figure><figure class="focus-device pods"><div class="device-crop" style="--x:165;--y:1570;--w:170;--h:210"><img src="assets/ecosystem-realistic-v9-1600.webp" alt="" width="1600" height="1800"></div><figcaption>AirPods</figcaption></figure></div><p class="scene-caption" data-i="scenePocket">手机随手学，耳机点头答。</p></div>
+<div id="panel-desk" class="device-panel desk" role="tabpanel" tabindex="0" aria-labelledby="tab-desk" hidden><div class="device-pair"><figure class="full-pair"><img src="assets/mobile-big-screens.webp" width="1000" height="900" alt="MacBook · iPad"><figcaption>MacBook · iPad</figcaption></figure></div><p class="scene-caption" data-i="sceneDesk">大屏学习，随手查词。</p></div>
+<div id="panel-listen" class="device-panel listen" role="tabpanel" tabindex="0" aria-labelledby="tab-listen" hidden><div class="device-pair"><figure class="focus-device watch"><div class="device-crop" style="--x:340;--y:1555;--w:160;--h:230"><img src="assets/ecosystem-realistic-v9-1600.webp" alt="" width="1600" height="1800"></div><figcaption>Apple Watch</figcaption></figure><figure class="focus-device car"><div class="device-crop" style="--x:840;--y:340;--w:470;--h:245"><img src="assets/ecosystem-realistic-v9-1600.webp" alt="" width="1600" height="1800"></div><figcaption>CarPlay</figcaption></figure></div><p class="scene-caption" data-i="sceneListen">抬腕背词，上车听词。</p></div>
+    <p class="mobile-art-note" data-i="heroArtNote">设备与界面为宣传示意</p>
+  </section>
+</header>
+
+<main>
+  <section class="film-section">
+    <div class="wrap">
+      <div class="film-intro"><p class="eyebrow" data-i="filmEyebrow">看看它如何融入生活</p>
+      <h2 class="film-heading" data-i="watch">▶ 看介绍片</h2>
+      <p class="film-copy" data-i="filmCopy">从听着背到随手查词，认识 Word Garden。</p></div>
   <div class="film reveal" id="film">
     <video controls playsinline preload="metadata" poster="assets/zh/poster.jpg" data-src="film-1080.mp4" data-poster="poster.jpg">
       <source src="assets/zh/film-1080.mp4" type="video/mp4">
     </video>
   </div>
-</header>
-
-<main>
+    </div>
+  </section>
   <div class="wrap">
-    <div class="feature reveal">
+    <div class="sec-head features-intro">
+      <h2 data-i="ecoIntro">让学习融入每一种日常</h2>
+    </div>
+    <details class="feature-fold" open><summary><span data-i="f1t">点头记得，<br>摇头想不起</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f1e">AirPods</p>
         <h2 data-i="f1t">点头记得，<br>摇头想不起</h2>
@@ -253,9 +96,9 @@
       <div class="stage">
         <div class="nod"><img class="head" data-src="nod.png" src="assets/zh/nod.png" alt=""><img class="card" data-src="card-got.png" src="assets/zh/card-got.png" alt=""></div>
       </div>
-    </div>
+    </div></details>
 
-    <div class="feature flip reveal">
+    <details class="feature-fold" open><summary><span data-i="f2t">不会的，<br>直接问 AI</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f2e">AI</p>
         <h2 data-i="f2t">不会的，<br>直接问 AI</h2>
@@ -266,12 +109,20 @@
         </ul>
         <p class="note" data-i="f2n">云端 AI 需要联网，你输入的内容会发送给 Anthropic 处理。</p>
       </div>
-      <div class="stage cream">
-        <div class="pair"><img class="mac" data-src="ai-mac.jpg" src="assets/zh/ai-mac.jpg" alt=""><img class="phone" data-src="ai-phone.png" src="assets/zh/ai-phone.png" alt=""></div>
+      <div class="stage ai-stage">
+        <div class="ai-demo" role="group" aria-label="Word Garden AI">
+          <p class="ai-demo-header">Word Garden <span>AI</span></p>
+          <p class="ai-demo-query" data-i="aiDemoQ">“心情不好”用英文怎么说？</p>
+          <div class="ai-demo-answer">
+            <p class="ai-demo-word" data-i="aiDemoA">I'm feeling down.</p>
+            <p class="ai-demo-detail" data-i="aiDemoDetail">我心情不好。</p>
+          </div>
+          <p class="ai-demo-caption" data-i="aiDemoCaption">对话示意</p>
+        </div>
       </div>
-    </div>
+    </div></details>
 
-    <div class="feature reveal">
+    <details class="feature-fold" open><summary><span data-i="f3t">任何 App 里，<br>一键查词</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f3e">Mac</p>
         <h2 data-i="f3t">任何 App 里，<br>一键查词</h2>
@@ -285,9 +136,9 @@
         <div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div>
         <img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="">
       </div>
-    </div>
+    </div></details>
 
-    <div class="feature flip reveal">
+    <details class="feature-fold" open><summary><span data-i="f4t">不打开 App，<br>也能背</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f4e">Widgets</p>
         <h2 data-i="f4t">不打开 App，<br>也能背</h2>
@@ -303,9 +154,9 @@
           <img class="small" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="">
         </div>
       </div>
-    </div>
+    </div></details>
 
-    <div class="feature reveal" data-needs hidden>
+    <details class="feature-fold" open><summary><span data-i="f5t">网页上的生词，<br>选中就懂</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal" data-needs hidden>
       <div class="copy">
         <p class="eyebrow" data-i="f5e">Safari</p>
         <h2 data-i="f5t">网页上的生词，<br>选中就懂</h2>
@@ -316,9 +167,9 @@
         </ul>
       </div>
       <div class="stage cream"><img class="shot" data-src="safari.png" alt=""></div>
-    </div>
+    </div></details>
 
-    <div class="feature flip reveal" data-needs hidden>
+    <details class="feature-fold" open><summary><span data-i="f6t">刷别的 App，<br>单词还在眼前</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal" data-needs hidden>
       <div class="copy">
         <p class="eyebrow" data-i="f6e">悬浮窗</p>
         <h2 data-i="f6t">刷别的 App，<br>单词还在眼前</h2>
@@ -329,7 +180,7 @@
         </ul>
       </div>
       <div class="stage"><img class="shot" data-src="float.png" alt=""></div>
-    </div>
+    </div></details>
 
     <div class="duo reveal">
       <div class="tile">
@@ -345,7 +196,7 @@
     </div>
   </div>
 
-  <section class="reveal">
+  <section class="screen-section">
     <div class="wrap sec-head">
       <p class="eyebrow" data-i="se">Screens</p>
       <h2 data-i="st">简单，好上手</h2>
@@ -391,16 +242,22 @@
   <div class="wrap">
     <p data-i="foot1">部分功能随即将发布的 1.2 版本推出。CarPlay 和桌面画面为示意图。请在安全的情况下使用。</p>
     <p data-i="foot2">Apple、iPhone、iPad、Mac、Apple Watch、AirPods、CarPlay 是 Apple Inc. 的商标。</p>
-    <p><a href="privacy.html" data-i="privacy">隐私政策</a> · © 2026 Word Garden</p>
+    <div class="footer-links">
+      <a href="privacy.html#zh" data-page="privacy.html" data-i="privacy">隐私政策</a>
+      <a href="support.html#zh" data-page="support.html" data-i="support">支持</a>
+      <a href="open-data.html" data-query-page="open-data.html" data-i="openData">开放数据</a>
+      <span class="copyright">© 2026 Word Garden</span>
+    </div>
   </div>
 </footer>
 
+<script src="language.js"></script>
 <script>
 (function () {
   var T = {
     en: {
       navGet: 'Get the app', h1: 'Learn words<br>anywhere, any time',
-      lead: 'Nod or shake with your AirPods to answer. Ask AI when you get stuck. Study from widgets, your Apple Watch and CarPlay. A little every day, and your garden grows.',
+      lead: 'From your earbuds to your desk. Keep learning.',
       storeSmall: 'Download on the', storeBig: 'App Store', watch: '▶ Watch the film', privacy: 'Privacy Policy', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Nod: got it.<br>Shake: not yet.', f1p: 'Running, commuting, cooking — your phone stays in your pocket. Hear a word, nod if you know it, shake if you don’t, and the next one plays.',
       f1a: 'Or answer from the Lock Screen or your AirPods stem', f1b: 'Sensitivity: low, medium, high or custom', f1n: 'Head-gesture answers need AirPods with head tracking.',
@@ -426,7 +283,7 @@
     // Dutch interface, learning Chinese (zh-nl)
     nl: {
       navGet: 'Download', h1: 'Leer woorden<br>waar en wanneer je wilt',
-      lead: 'Knik of schud je hoofd met je AirPods om te antwoorden. Vraag het AI als je vastzit. Leer via widgets, je Apple Watch en CarPlay. Elke dag een beetje, en je tuin groeit.',
+      lead: 'Van je oortjes tot je bureau. Blijf leren.',
       storeSmall: 'Download in de', storeBig: 'App Store', watch: '▶ Bekijk de film', privacy: 'Privacyverklaring', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Knikken: ken ik.<br>Schudden: nog niet.', f1p: 'Hardlopen, reizen, koken — je telefoon blijft in je zak. Hoor een woord, knik als je het kent, schud als je het niet weet, en het volgende woord begint.',
       f1a: 'Of antwoord via het toegangsscherm of het steeltje van je AirPods', f1b: 'Gevoeligheid: laag, gemiddeld, hoog of aangepast', f1n: 'Antwoorden met je hoofd vereist AirPods met hoofdtracking.',
@@ -452,7 +309,7 @@
     // Spanish interface, learning Dutch (nl-es)
     es: {
       navGet: 'Descargar', h1: 'Aprende palabras<br>donde y cuando quieras',
-      lead: 'Asiente o niega con la cabeza con tus AirPods para responder. Pregunta a la IA cuando te atasques. Estudia desde widgets, tu Apple Watch y CarPlay. Un poco cada día, y tu jardín crece.',
+      lead: 'De tus auriculares al escritorio. Sigue aprendiendo.',
       storeSmall: 'Descárgalo en el', storeBig: 'App Store', watch: '▶ Ver el vídeo', privacy: 'Política de privacidad', meta: 'iPhone · iPad · Mac · Apple Watch · CarPlay',
       f1e: 'AirPods', f1t: 'Asientes: lo sé.<br>Niegas: aún no.', f1p: 'Corriendo, de camino al trabajo, cocinando: el móvil se queda en el bolsillo. Oyes una palabra, asientes si la sabes, niegas si no, y suena la siguiente.',
       f1a: 'O responde desde la pantalla bloqueada o el tallo de tus AirPods', f1b: 'Sensibilidad: baja, media, alta o personalizada', f1n: 'Responder con la cabeza requiere AirPods con seguimiento de la cabeza.',
@@ -476,18 +333,40 @@
       foot2: 'Apple, iPhone, iPad, Mac, Apple Watch, AirPods y CarPlay son marcas comerciales de Apple Inc.'
     }
   };
+  T.en.heroArtNote = 'Devices and interfaces shown for illustration';
+  T.nl.heroArtNote = 'Apparaten en schermen ter illustratie';
+  T.es.heroArtNote = 'Dispositivos e interfaces ilustrativos';
+  T.en.ecoIntro = 'Make learning part of your day';
+  T.nl.ecoIntro = 'Leren past in je dag';
+  T.es.ecoIntro = 'Aprender forma parte de tu día';
+  T.en.aiDemoQ = 'How do I say “I’m feeling down” in Chinese?';
+  T.en.aiDemoA = '我心情不好。'; T.en.aiDemoDetail = 'wǒ xīnqíng bù hǎo'; T.en.aiDemoCaption = 'Example conversation';
+  T.nl.aiDemoQ = 'Hoe zeg je “ik voel me rot” in het Chinees?';
+  T.nl.aiDemoA = '我心情不好。'; T.nl.aiDemoDetail = 'wǒ xīnqíng bù hǎo'; T.nl.aiDemoCaption = 'Voorbeeldgesprek';
+  T.es.aiDemoQ = '¿Cómo se dice “estoy de bajón” en neerlandés?';
+  T.es.aiDemoA = 'Ik voel me rot.'; T.es.aiDemoDetail = 'Estoy de bajón.'; T.es.aiDemoCaption = 'Conversación de ejemplo';
+  T.en.support = 'Support'; T.en.openData = 'Open data';
+  T.nl.support = 'Ondersteuning'; T.nl.openData = 'Open data';
+  T.es.support = 'Soporte'; T.es.openData = 'Datos abiertos';
+  Object.assign(T.en,{"languageLabel": "Language", "ecosystemLabel": "One garden. Six ways to learn.", "tabPocket": "Everyday", "tabDesk": "Desk", "tabListen": "Listen", "scenePocket": "Learn on your iPhone. Answer with a nod.", "sceneDesk": "Learn on a bigger screen. Look up words as you work.", "sceneListen": "Learn on your wrist. Listen in the car.", "filmEyebrow": "See it in everyday life", "filmCopy": "From listening to quick look-ups. Meet Word Garden."});
+  Object.assign(T.nl,{"languageLabel": "Taal", "ecosystemLabel": "Eén tuin. Zes manieren om te leren.", "tabPocket": "Bij je", "tabDesk": "Bureau", "tabListen": "Luisteren", "scenePocket": "Leer op je iPhone. Antwoord met een knik.", "sceneDesk": "Leer op een groter scherm. Zoek woorden op terwijl je werkt.", "sceneListen": "Leer op je pols. Luister in de auto.", "filmEyebrow": "Zo past het in je dag", "filmCopy": "Van luisterend leren tot even opzoeken. Ontdek Word Garden."});
+  Object.assign(T.es,{"languageLabel": "Idioma", "ecosystemLabel": "Un jardín. Seis formas de aprender.", "tabPocket": "Contigo", "tabDesk": "Escritorio", "tabListen": "Escuchar", "scenePocket": "Aprende en el iPhone. Responde asintiendo.", "sceneDesk": "Aprende en una pantalla grande. Busca palabras mientras trabajas.", "sceneListen": "Aprende en la muñeca. Escucha en el coche.", "filmEyebrow": "Mira cómo encaja en tu día", "filmCopy": "De escuchar y aprender a buscar una palabra. Descubre Word Garden."});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
   T.zh = zh;
+  var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster.jpg", "quick.png", "safari.png", "study.png", "watch.png", "widget-medium.png", "widget-small.png"];
   var video = document.querySelector('video');
   function setLang(lang) {
     var t = T[lang];
     document.documentElement.lang = HTML_LANG[lang];
-    document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
-    // nl/es shots may not exist yet: any file that fails to load falls back to the English one
+    document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = el.closest('summary') ? t[el.dataset.i].replace(/<br\s*\/?\s*>/gi, ' ') : t[el.dataset.i]; });
+    document.querySelectorAll('[data-page]').forEach(function (el) { el.href = el.dataset.page + '#' + lang; });
+    document.querySelectorAll('[data-query-page]').forEach(function (el) { el.href = el.dataset.queryPage + '?lang=' + lang; });
+    // Localized assets retain an English fallback if a file is unavailable.
     var own = lang === 'zh' || lang === 'en';
     document.querySelectorAll('img[data-src]').forEach(function (el) {
+      if (availableImages.indexOf(el.dataset.src) < 0) return;
       el.onerror = own ? null : function () { el.onerror = null; el.src = 'assets/en/' + el.dataset.src; };
       el.src = 'assets/' + lang + '/' + el.dataset.src;
     });
@@ -500,14 +379,25 @@
       if (!own) { var p = new Image(); p.onerror = function () { if (video.poster.indexOf('/' + lang + '/') >= 0) video.poster = 'assets/en/poster.jpg'; }; p.src = video.poster; }
     }
     document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
-    try { localStorage.setItem('wg.site.lang', lang); } catch (e) {}
+
   }
-  var q = new URLSearchParams(location.search).get('lang'), saved = null;
-  try { saved = localStorage.getItem('wg.site.lang'); } catch (e) {}
-  var nav = (navigator.language || '').slice(0, 2).toLowerCase();
-  var initial = T[q] ? q : T[saved] ? saved : T[nav] ? nav : 'nl';
-  setLang(initial);
-  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var selected = WordGardenLanguage.resolve({
+    query: new URLSearchParams(location.search).get('lang'),
+    saved: WordGardenLanguage.readSaved(),
+    language: navigator.language
+  });
+  setLang(selected);
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var lang = b.dataset.lang;
+      WordGardenLanguage.remember(lang);
+      // Keep an existing explicit URL choice in agreement with a new manual choice.
+      var url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      try { history.replaceState(null, '', url); } catch (e) {}
+      setLang(lang);
+    });
+  });
 
   // sections whose pictures aren't made yet stay hidden until one loads
   document.querySelectorAll('[data-needs] img').forEach(function (img) {
@@ -525,5 +415,6 @@
   }
 })();
 </script>
+<script src="responsive-v9.js"></script>
 </body>
 </html>
