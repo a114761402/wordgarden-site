@@ -130,6 +130,10 @@
         <picture><source media="(max-width:700px)" width="800" height="940" data-src="mac-ai-focus-v14.webp" srcset="assets/zh/mac-ai-focus-v14.webp"><img data-src="mac-ai-detail-v14.webp" src="assets/zh/mac-ai-detail-v14.webp" alt="Mac AI: navigation, history and conversation" loading="lazy" width="1800" height="1080" decoding="async"></picture>
         <figcaption data-i="macAIlabel">Mac · AI 对话与历史记录 · 界面示意</figcaption>
       </figure>
+      <figure class="platform-shot chat-words-concept" id="chat-words">
+        <picture><source media="(max-width:700px)" width="800" height="1200" data-src="chatgpt-words-mobile-v3.webp" srcset="assets/zh/chatgpt-words-mobile-v3.webp"><img data-src="chatgpt-words-desktop-v3.webp" data-alt-i="chatWordsAlt" src="assets/zh/chatgpt-words-desktop-v3.webp" alt="概念示意。在 ChatGPT 里练习对话，选出新词，再把词表行或已共享的 Google 表格链接粘贴到 Word Garden，在生词本里复习。" loading="lazy" width="1800" height="720" decoding="async"></picture>
+        <figcaption data-i="chatWordsCaption">先请 ChatGPT 把选中的词整理成词表行，再粘贴到 Word Garden。也可粘贴任何持链接者可查看的 Google 表格链接。</figcaption>
+      </figure>
     </div>
 
 
@@ -348,12 +352,16 @@
   Object.assign(T.en,{"notesPreviewLabel": "Feature preview · Offscreen render of the Mac Notes widget"});
   Object.assign(T.nl,{"notesPreviewLabel": "Voorproefje · Offscreen-render van de Mac-widget voor notities"});
   Object.assign(T.es,{"notesPreviewLabel": "Vista previa de la función · Renderizado fuera de pantalla del widget de notas para Mac"});
+  Object.assign(T.en,{"chatWordsCaption": "Ask ChatGPT to put your selected words into vocabulary rows, then paste them into Word Garden. You can also paste a Google Sheets link that anyone with the link can view.", "chatWordsAlt": "Concept illustration. Choose words from a ChatGPT conversation, paste the vocabulary rows or a shared Google Sheets link into Word Garden, and review the words in your notebook."});
+  Object.assign(T.nl,{"chatWordsCaption": "Vraag ChatGPT om met je gekozen woorden een woordenlijst te maken. Plak de regels in Word Garden. Je kunt ook een Google Sheets-link plakken die iedereen met de link kan bekijken.", "chatWordsAlt": "Conceptillustratie. Kies woorden uit een gesprek in ChatGPT, plak de regels uit de woordenlijst of een gedeelde Google Sheets-link in Word Garden en oefen de woorden in je woordenschrift."});
+  Object.assign(T.es,{"chatWordsCaption": "Pide a ChatGPT que organice las palabras elegidas en filas y pégalas en Word Garden. También puedes pegar un enlace de Google Sheets que pueda abrir cualquier persona que lo tenga.", "chatWordsAlt": "Ilustración conceptual. Elige palabras de una conversación en ChatGPT, pega las filas de la lista o un enlace compartido de Google Sheets en Word Garden y repasa en tu cuaderno."});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
+  document.querySelectorAll('[data-alt-i]').forEach(function (el) { zh[el.dataset.altI] = el.alt; });
   T.zh = zh;
   var availableImages = ["mac-home.png", "ipad-home.png", "ai-mac.jpg", "ai-phone.png", "card-got.png", "carplay.png", "home.png", "icon.png", "listen.png", "nod.png", "poster.jpg", "quick.png", "safari.png", "study-thin-v15.png", "watch.png", "widget-medium.png", "widget-small.png"];
-  availableImages = availableImages.concat(["notes-widget-preview-v19.webp"]).concat(["mac-desktop-v16.webp", "mac-desktop-focus-v16.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
+  availableImages = availableImages.concat(["chatgpt-words-desktop-v3.webp", "chatgpt-words-mobile-v3.webp"]).concat(["notes-widget-preview-v19.webp"]).concat(["mac-desktop-v16.webp", "mac-desktop-focus-v16.webp", "widget-mac-v16.webp", "widget-iphone-v16.webp", "widget-ipad-v16.webp"]).concat(["mac-study-detail-v14.webp","mac-home-detail-v14.webp", "ipad-study-detail-v14.webp", "ipad-safari-detail-v14.webp", "mac-widget-detail-v14.webp", "mac-ai-detail-v14.webp", "mac-ai-focus-v14.webp"]);
   var video = document.querySelector('video');
   var imageGeneration = 0;
   function setLang(lang) {
@@ -361,6 +369,7 @@
     var t = T[lang];
     document.documentElement.lang = HTML_LANG[lang];
     document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
+    document.querySelectorAll('[data-alt-i]').forEach(function (el) { if (t[el.dataset.altI] != null) el.alt = t[el.dataset.altI]; });
     document.querySelectorAll('[data-page]').forEach(function (el) { el.href = el.dataset.page + '#' + lang; });
     document.querySelectorAll('[data-query-page]').forEach(function (el) { el.href = el.dataset.queryPage + '?lang=' + lang; });
     // Localized assets retain an English fallback if a file is unavailable.
