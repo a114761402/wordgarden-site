@@ -17,14 +17,13 @@
 <link rel="icon" type="image/png" href="assets/zh/icon.png">
 <link rel="apple-touch-icon" href="assets/zh/icon.png">
 <link rel="stylesheet" href="light.css">
-<link rel="stylesheet" href="responsive-v9.css">
+<link rel="stylesheet" href="responsive-v10.css">
 </head>
 <body>
 <nav>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/zh/icon.png" alt=""><span>Word Garden Daily</span></a>
     <div class="spacer"></div>
-    <button class="language-toggle" type="button" aria-expanded="false" aria-controls="site-languages" data-i="languageLabel">语言</button>
     <div id="site-languages" class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="zh">中文</button>
       <button type="button" data-lang="en">EN</button>
@@ -82,7 +81,33 @@
     <div class="sec-head features-intro">
       <h2 data-i="ecoIntro">让学习融入每一种日常</h2>
     </div>
-    <details class="feature-fold" open><summary><span data-i="f1t">点头记得，<br>摇头想不起</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal">
+    <div class="feature reveal mac-overview" id="mac">
+      <div class="copy">
+        <p class="eyebrow" data-i="f3e">Mac</p>
+        <h2 data-i="f3t">任何 App 里，<br>一键查词</h2>
+        <p data-i="macOverview">在 Mac 上背词、查词，也能用桌面组件随手作答。</p>
+        <p data-i="f3p">看文章、写邮件时遇到生词，按 ⇧ ⌥ 空格，边打边出结果，拼错也能找到。查过的词自动进生词本。</p>
+        <ul>
+          <li data-i="f3a">不用切换窗口，回车看完整解释</li>
+          <li data-i="f3b">离线词典，查词不用等</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div>
+        <img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="">
+      </div>
+    </div>
+
+    <div class="feature flip reveal watch-overview" id="apple-watch">
+      <div class="copy">
+        <p class="eyebrow" data-i="wt">Apple Watch</p>
+        <h2 data-i="watchTitle">手腕上，也能背词</h2>
+        <p data-i="wp">手机放兜里，在手表上背。离线可用，连着 AirPods 也能听着背。</p>
+      </div>
+      <div class="stage"><img class="watch-shot" data-src="watch.png" src="assets/zh/watch.png" alt="Apple Watch"></div>
+    </div>
+
+    <div class="feature reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f1e">AirPods</p>
         <h2 data-i="f1t">点头记得，<br>摇头想不起</h2>
@@ -96,9 +121,9 @@
       <div class="stage">
         <div class="nod"><img class="head" data-src="nod.png" src="assets/zh/nod.png" alt=""><img class="card" data-src="card-got.png" src="assets/zh/card-got.png" alt=""></div>
       </div>
-    </div></details>
+    </div>
 
-    <details class="feature-fold" open><summary><span data-i="f2t">不会的，<br>直接问 AI</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal">
+    <div class="feature flip reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f2e">AI</p>
         <h2 data-i="f2t">不会的，<br>直接问 AI</h2>
@@ -120,25 +145,11 @@
           <p class="ai-demo-caption" data-i="aiDemoCaption">对话示意</p>
         </div>
       </div>
-    </div></details>
+    </div>
 
-    <details class="feature-fold" open><summary><span data-i="f3t">任何 App 里，<br>一键查词</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal">
-      <div class="copy">
-        <p class="eyebrow" data-i="f3e">Mac</p>
-        <h2 data-i="f3t">任何 App 里，<br>一键查词</h2>
-        <p data-i="f3p">看文章、写邮件时遇到生词，按 ⇧ ⌥ 空格，边打边出结果，拼错也能找到。查过的词自动进生词本。</p>
-        <ul>
-          <li data-i="f3a">不用切换窗口，回车看完整解释</li>
-          <li data-i="f3b">离线词典，查词不用等</li>
-        </ul>
-      </div>
-      <div class="stage">
-        <div class="keys" aria-hidden="true"><div class="key">⇧</div><div class="key">⌥</div><div class="key" data-i="key">Space</div></div>
-        <img class="quick" data-src="quick.png" src="assets/zh/quick.png" alt="">
-      </div>
-    </div></details>
 
-    <details class="feature-fold" open><summary><span data-i="f4t">不打开 App，<br>也能背</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal">
+
+    <div class="feature flip reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f4e">Widgets</p>
         <h2 data-i="f4t">不打开 App，<br>也能背</h2>
@@ -154,9 +165,9 @@
           <img class="small" data-src="widget-small.png" src="assets/zh/widget-small.png" alt="">
         </div>
       </div>
-    </div></details>
+    </div>
 
-    <details class="feature-fold" open><summary><span data-i="f5t">网页上的生词，<br>选中就懂</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature reveal" data-needs hidden>
+    <div class="feature reveal">
       <div class="copy">
         <p class="eyebrow" data-i="f5e">Safari</p>
         <h2 data-i="f5t">网页上的生词，<br>选中就懂</h2>
@@ -167,9 +178,9 @@
         </ul>
       </div>
       <div class="stage cream"><img class="shot" data-src="safari.png" alt=""></div>
-    </div></details>
+    </div>
 
-    <details class="feature-fold" open><summary><span data-i="f6t">刷别的 App，<br>单词还在眼前</span><span class="fold-sign" aria-hidden="true">+</span></summary><div class="feature flip reveal" data-needs hidden>
+    <div class="feature text-feature reveal" id="floating-window">
       <div class="copy">
         <p class="eyebrow" data-i="f6e">悬浮窗</p>
         <h2 data-i="f6t">刷别的 App，<br>单词还在眼前</h2>
@@ -179,20 +190,12 @@
           <li data-i="f6b">iPhone 和 iPad 都支持</li>
         </ul>
       </div>
-      <div class="stage"><img class="shot" data-src="float.png" alt=""></div>
-    </div></details>
 
-    <div class="duo reveal">
-      <div class="tile">
-        <h3 data-i="wt">Apple Watch</h3>
-        <p data-i="wp">手机放兜里，在手表上背。离线可用，连着 AirPods 也能听着背。</p>
-        <div class="art"><img data-src="watch.png" src="assets/zh/watch.png" alt=""></div>
-      </div>
-      <div class="tile">
-        <h3 data-i="ct">CarPlay</h3>
-        <p data-i="cp">开车时只听不看：在「正在播放」点 ✓ 记得、✗ 想不起；方向盘下一首是下一个词，上一首是再听一遍。</p>
-        <div class="art steel"><img data-src="carplay.png" src="assets/zh/carplay.png" alt=""></div>
-      </div>
+    </div>
+
+    <div class="feature reveal carplay-overview" id="carplay">
+      <div class="copy"><h2 data-i="ct">CarPlay</h2><p data-i="cp">开车时只听不看：在「正在播放」点 ✓ 记得、✗ 想不起；方向盘下一首是下一个词，上一首是再听一遍。</p></div>
+      <div class="stage"><img class="carplay-shot" data-src="carplay.png" src="assets/zh/carplay.png" alt="CarPlay"></div>
     </div>
   </div>
 
@@ -351,6 +354,9 @@
   Object.assign(T.en,{"languageLabel": "Language", "ecosystemLabel": "One garden. Six ways to learn.", "tabPocket": "Everyday", "tabDesk": "Desk", "tabListen": "Listen", "scenePocket": "Learn on your iPhone. Answer with a nod.", "sceneDesk": "Learn on a bigger screen. Look up words as you work.", "sceneListen": "Learn on your wrist. Listen in the car.", "filmEyebrow": "See it in everyday life", "filmCopy": "From listening to quick look-ups. Meet Word Garden."});
   Object.assign(T.nl,{"languageLabel": "Taal", "ecosystemLabel": "Eén tuin. Zes manieren om te leren.", "tabPocket": "Bij je", "tabDesk": "Bureau", "tabListen": "Luisteren", "scenePocket": "Leer op je iPhone. Antwoord met een knik.", "sceneDesk": "Leer op een groter scherm. Zoek woorden op terwijl je werkt.", "sceneListen": "Leer op je pols. Luister in de auto.", "filmEyebrow": "Zo past het in je dag", "filmCopy": "Van luisterend leren tot even opzoeken. Ontdek Word Garden."});
   Object.assign(T.es,{"languageLabel": "Idioma", "ecosystemLabel": "Un jardín. Seis formas de aprender.", "tabPocket": "Contigo", "tabDesk": "Escritorio", "tabListen": "Escuchar", "scenePocket": "Aprende en el iPhone. Responde asintiendo.", "sceneDesk": "Aprende en una pantalla grande. Busca palabras mientras trabajas.", "sceneListen": "Aprende en la muñeca. Escucha en el coche.", "filmEyebrow": "Mira cómo encaja en tu día", "filmCopy": "De escuchar y aprender a buscar una palabra. Descubre Word Garden."});
+  Object.assign(T.en,{"macOverview": "Learn and look up words on your Mac, or answer directly from a desktop widget.", "watchTitle": "Learn right on your wrist"});
+  Object.assign(T.nl,{"macOverview": "Leer en zoek woorden op je Mac, of antwoord direct via een bureaubladwidget.", "watchTitle": "Leren, gewoon op je pols"});
+  Object.assign(T.es,{"macOverview": "Aprende y busca palabras en el Mac, o responde desde un widget del escritorio.", "watchTitle": "Aprende desde tu muñeca"});
   var HTML_LANG = { zh: 'zh-Hans', en: 'en', nl: 'nl', es: 'es' };
   var zh = {};
   document.querySelectorAll('[data-i]').forEach(function (el) { zh[el.dataset.i] = el.innerHTML; });
@@ -360,7 +366,7 @@
   function setLang(lang) {
     var t = T[lang];
     document.documentElement.lang = HTML_LANG[lang];
-    document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = el.closest('summary') ? t[el.dataset.i].replace(/<br\s*\/?\s*>/gi, ' ') : t[el.dataset.i]; });
+    document.querySelectorAll('[data-i]').forEach(function (el) { if (t[el.dataset.i] != null) el.innerHTML = t[el.dataset.i]; });
     document.querySelectorAll('[data-page]').forEach(function (el) { el.href = el.dataset.page + '#' + lang; });
     document.querySelectorAll('[data-query-page]').forEach(function (el) { el.href = el.dataset.queryPage + '?lang=' + lang; });
     // Localized assets retain an English fallback if a file is unavailable.
@@ -399,12 +405,11 @@
     });
   });
 
-  // sections whose pictures aren't made yet stay hidden until one loads
-  document.querySelectorAll('[data-needs] img').forEach(function (img) {
-    var sec = img.closest('[data-needs]');
-    img.addEventListener('load', function () { sec.hidden = false; if (img.naturalWidth > img.naturalHeight) img.classList.add('wide'); });
+  // Fit artwork when available; never hide its product introduction.
+  document.querySelectorAll('img.shot').forEach(function (img) {
+    function fit() { if (img.naturalWidth) img.classList.toggle('wide', img.naturalWidth > img.naturalHeight); }
+    img.addEventListener('load', fit); fit();
   });
-  document.querySelectorAll('img[data-src]').forEach(function (img) { if (img.complete && img.naturalWidth && img.closest('[data-needs]')) img.closest('[data-needs]').hidden = false; });
 
   // the App Store page in the visitor's own region
   document.querySelectorAll('.store-link').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
@@ -415,6 +420,6 @@
   }
 })();
 </script>
-<script src="responsive-v9.js"></script>
+<script src="responsive-v10.js"></script>
 </body>
 </html>
